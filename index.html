@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html> lang ="en"
+<head>
+    <meta charset = <"UTF-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale=1.0" />
+    <title>Cyberlearn </title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body> 
+ 
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            </span>CYBER<span class="logo-accent">LEARN</span>
+        </div>
+        <u1 class="nav-links">
+            <li><a href="#home" class="nav-link active">HOME</a></li>
+            <li><a href="#lessons" class="nav-link">CYBERSECURITY LESSONS</a></li>
+            <li><a href="#tools" class="nav-link">TOOLS</a></li>
+            <li><a href="#quiz" class="nav-link">QUIZ</a></li>    
+        </u1>
+        <div class="nav-status">
+            <span class="status-dot"></span>SECURE
+        </div>
+       </nav>
+
+       <!-- BANNER (HERO) -->
+       <section class="banner" id="banner">
+        <div class="banner-grid"></div>
+        <div class="scanline"></div>
+        <div class="banner-content">
+            <div class="banner-tag">//HACKCLUB PROJECT</div>
+            <h1 class="banner-title">
+                LEARN<br />
+                <span class="title-accent">CYBER</span><br/>
+                SECURITY
+            </h1>
+            <p class="banner-desc">
+                Encryption, Phishing, Firewalls and SQL Injection. <br />
+                Master the basic fundamentals of Cybersecurity
+            </p>
+            <div class="banner-btns">
+                <a href="#lessons" class="btn btn-primary">START LEARNING →</a>
+                <a href="#quiz" class="btn btn-ghost">TAKE THE QUIZ</a>
+            </div>
+        </div>
+        <div class="banner-terminal">
+            <div class="terminal-bar">
+            <span class="t-dot red"></span>    
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">terminal - bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd" id="typewriter"></span><span class="t-cursor">█</span></div>
+            <div class="t-line t-out" id="termOut1"></div>
+            <div class="t-line t-out" id="termOut2"></div>
+            <div class="t-line t-out" id="termOut3"></div>
+        </div>
+    </div>
+</section>
+
+<!-- LESSONS --> 
+<section class="section" id="lessons">
+    <div class="section-header">
+        <div class="section-tag">01 / LESSONS</div>
+        <h2 class="section-title">CORE TOPICS</h2>
+        <p class="section-sub">Click any topic to open the card and learn</p>
+    </div>
+
+    <div class="lessons-grid">
+
+        <div class="lesson-card" onclick="toggleLesson(this)">
+            <div class="lesson-head">
+                <div class="lesson-icon">🔐</div>
+                <div>
+                <div class="lesson-num">01</div>
+                <div class="lesson-title">ENCRYPTION</div>
+             </div>
+              <div class="lesson-arrow">▼</div>
+            </div>
+             <div class="lesson-body">
+                <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
+                <div class="lesson-example">
+                    <div class="example-label">// EXAMPLE - Caesar Cipher</div> 
+                    <div class="cipher-demo">
+                        <div class="cipher-row">
+                            <span class="cipher-label">Plain:</span>
+                            <span class="cipher-text" id="plain-text">HELLO WORLD</span> 
+                        </div>
+                          <div class="cipher-row">
+                            <span class="cipher-label">Shift:</span>
+                            <input type="range" min="1" max="25" value="3" class="cipher-slider" id="cipher-shift" oninput="updateCipher(event)" onclick="stopBubble(event)" />
+                            <span class="cipher-num" id="shift-num">3</span>
+                        </div>
+                        <div class="cipher-row"
+                            <span class="cipher-label">Encrypted</span>
+                            <span class="cipher-text accent" id="cipher-output">KHOOR ZRUOG</span>
+                        </div>
+                    </div>
+                  </div>
+                <div class="lesson-facts">
+                    <div class="fact"> Modern encryption uses AES-256 — which would take billions of years to crack by brute force.</div>
+                    <div class="fact"> HTTPS uses TLS encryption to protect everything that you send online.</div>
+                    <div class="fact"> End-to-end encryption means even the app provider can't read your messages.</div>
+                 </div>
+             </div>
+         </div>
+         <div class="lesson-card" id="card-phishing">
+            <div class="lesson-head" onclick="toggleLesson('card-phishing')">
+              <div class="lesson-icon">🎣</div>
+              <div>
+                <div class="lesson-num">02</div>
+                <div class="lesson-title">PHISHING</div>  
+              </div>
+              <div class="lesson-arrow">▼</div>
+            </div>  
+            <div class="lesson-body">
+                <p>Phishing is when an attacker impersonates trusted organisations to trick you into giving up passwords, credit card info, and personal information</p>
+                <div class="lesson-example">
+                    <div class="example-label">// SPOT THE PHISH - Is this email legit?</div>
+                    <div class="phish-demo" id="phishDemo">
+                        <div class="fake-email">
+                            <div class="email-field"><span>From:</span> <span id="phishFrom"></span></div>
+                            <div class="email-field"><span>Subject:</span> <span id="phishSubject"></span></div>
+                            <div class="email-body" id="phishBody"></div>
+                            <div class="phish-btns">
+                              <button class="btn btn-sm btn-danger" onclick="judgePhish(event, true)">🎣 PHISHING</button>
+                              <button class="btn btn-sm btn-safe" onclick="judgePhish(event, false)">✅ LEGIT</button>
+                            </div>
+                            <div class="phish-result" id="phishResult"></div>
+                        </div> 
+                        <button class="btn btn-sm btn-ghost"  onclick="nextPhish(event)">NEXT EMAIL →</button> 
+                    </div>  
+                    <div class="lesson-facts"
+                        <div class="fact"> 91% of all cyberattacks begin with a phishing email</div>
+                        <div class="fact"> Always hover over links before clicking - the real URL shows in the status bar</div>
+                        <div class="fact"> Urgency is the #1 social engineering tactic, emails or messages may display such as "ACT NOW!" to make you fall in the trap</div>
+                      </div>
+                    </div> 
+                  </div> 
+                  
+                  <div class="lesson-card" id="card-firewalls">
+                  <div class="lesson-head" onclick="toggleLesson('card-firewalls')"></div>
+                    <div class="lesson-icon">🔥🧱</div>
+                    <div>
+                      <div class="lesson-num">03</div>
+                      <div class="lesson-title">FIREWALL</div>
+                    </div>
+                    <div class="lesson-arrow">▼</div>
+                  </div>
+                  <div class="lesson-body">
+                    <p>A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules — like a bouncer for your network </p>  
+                    <div class="lesson-example">
+                        <div class="example-label">// FIREWALL RULES SIMULATON</div>
+                        <div class="firewall-demo">
+                            <div class="fw-rules">
+                                <div class="fw-rule allow">ALLOW - PORT 443 (HTTPS)</div>
+                                <div class="fw-rule allow">ALLOW - PORT 80 (HTTP)</div>
+                                <div class="fw-rule allow">DENY - PORT 22 (SSH from external)</div>
+                                <div class="fw-rule allow">DENY - PORT 3389 (RDP)</div>
+                                <div class="fw-rule allow">ALLOW - PORT 25 (SMTP)</div>
+                            </div>
+                            <div class="fw-test">
+                              <input type="number" class="fw-input" id="fwPort" placeholder="Test a port number e.g. 443" min="1" max="65535" onclick="stopBubble(event)" oninput="stopBubble(event)"/>
+                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">TEST→</button>
+                             </div>
+                             <div class="fw-result" id="fw-result"></div>
+                        </div>
+                      </div>
+                      <div class="lesson-facts">
+                        <div class="fact"> There are two types: Network firewalls (hardware) and Host-based firewalls (software)</div>
+                        <div class="fact"> Next-gen firewalls (NGFW) can inspect the actual content of packets, not just ports</div>       
+                    </div> 
+                </div>
+              </div>
+            
+            <div class="lesson-card" id="card-sql">
+                <div class="lesson-head" onclick="toggleLesson('card-sql')">
+                    <div class="lesson-icon">💉</div>
+                <div>
+                    <div class="lesson-num">04</div>
+                    <div class="lesson-title">SQL INJECTION</div>
+                </div> 
+                <div class="lesson-arrow">▼</div>
+              </div>
+              <div class="lesson-body">
+                <p>SQL Injection is when an attacker inserts malicious SQL code into an input field, tricking a database into revealing or deleting data</p>  
+                <div class="lesson-example">
+                    <div class="example-label">// DEMO — Try these inputs in a fake login</div>
+                    <div class="sql-demo">
+                      <div class="fake-login">
+                        <input class="sql-input" id="sqlUser" type="text" placeholder="Username" onclick="stopBubble(event)" oninput="checkSQL()" />
+                        <input class="sql-input" id="sqlPass" type="text" placeholder="Password" onclick="stopBubble(event)" oninput="checkSQL()" />
+                        <div class="sql-result" id="sqlResult">Enter credentials above</div>
+                      </div>
+                      <div class="sql-chips">
+                        <span class="chip" onclick="injectSQL(quot);">Try: ' OR '1'='1</span>
+                        <span class="chip" onclick="injectSQL(quot);">Try: admin'--</span>
+                        <span class="chip" onclick="injectSQL('normal_user')">Try: normal user</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lesson-facts">
+                    <div class="fact">💉 SQL injection is still the #1 web vulnerability (OWASP Top 10)</div>
+                    <div class="fact">💉 Defence: Always use parameterised queries / prepared statements</div>
+                    <div class="fact">💉 The 2012 LinkedIn breach exposed 117M passwords via SQL injection</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+          <!-- TOOLS --> 
+          <section class="section section-dark" id="tools">
+            <div class="section-header">
+              <div class="section-tag">02 / TOOLS</div>
+              <h2 class="section-title">INTERACTIVE TOOLS</h2>
+              <p class="section-sub">Hands-on demos to gain more understanding on these concepts</p>
+            </div>
+            <div class="tools-grid">
+              <div class="tool-card">
+                <div class="tool-header">
+                  <span class="tool-icon">🔑</span>
+                  <div>
+                    <div class="tool-title">PASSWORD STRENGTH</div>
+                    <div class="tool-sub">See how strong your password really is</div>
+                  </div>
+                </div>
+                <input type="text" class="tool-input" id="pwInput" placeholder="Type a password to check..." oninput="checkPassword()" autocomplete="off" />
+                <div class="pw-strength-row">
+                  <div class="pw-bar-wrap"><div class="pw-bar" id="pwBar"></div></div>
+                  <div class="pw-label" id="pwLabel">—</div>
+                </div>
+                <div class="pw-checks" id="pwChecks"></div>
+              </div>
+              <div class="tool-card">
+                <div class="tool-header">
+                  <span class="tool-icon">🔢</span>
+                  <div>
+                    <div class="tool-title">HASHING DEMO</div>
+                    <div class="tool-sub">One-way fingerprints are basically impossible to reverse</div>
+                  </div>
+                </div>
+                <input type="text" class="tool-input" id="hashInput" placeholder="Type anything to hash..." oninput="generateHash()" autocomplete="off" />
+                <div class="hash-box">
+                  <div class="hash-box-label">SIMULATED SHA-256 OUTPUT</div>
+                  <div class="hash-val" id="hashVal">—</div>
+                </div>
+                <div class="hash-tip">Change even ONE character — the entire hash changes completely.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- QUIZ -->
+          <section class="section" id="quiz">
+            <div class="section-header">
+              <div class="section-tag">03 / QUIZ</div>
+              <h2 class="section-title">TEST YOUR SKILLS</h2>
+              <p class="section-sub">10 questions. No time limit. Let's see how much you've learned so far (progress check).</p>
+            </div>
+            <div class="quiz-wrap">
+              <div class="quiz-card" id="quizCard">
+                <div class="quiz-top">
+                  <div class="quiz-progress-wrap">
+                    <div class="quiz-progress-bar" id="quizProgressBar"></div>
+                  </div>
+                  <div class="quiz-meta">
+                    <span id="quizNum">Q1 / 10</span>
+                    <span>Score: <span class="accent" id="quizScore">0</span></span>
+                  </div>
+                </div>
+                <div class="quiz-questions" id="quizQuestion">Loading...</div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <button class="btn btn-primary" id="quizNext" style="display:none" onclick="nextQuizQ()">NEXT →</button>
+              </div>
+              <div class="quiz-end" id="quizEnd" style="display:none">
+                <div class="end-icon" id="endIcon"></div>
+                <div class="end-title">MISSION COMPLETE</div>
+                <div class="end-score" id="endScore"></div>
+                <div class="end-msg" id="endMsg"></div>
+                <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN</button>
+              </div>
+            </div>
+          </section>
+        
+          <!-- FOOTER -->
+          <footer class="footer">
+            <div class="footer-inner">
+              <div class="footer-logo">CYBERLEARN</div>
+              <div class="footer-text">Open Source Project</div>
+              <div class="footer-links">
+                <a href="https://hackclub.com" target="_blank">Hack Club</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </footer>
+       <script src="script.js"></script>
+        </body>
+        </html>
+      </section> 
+       
