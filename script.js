@@ -1,45 +1,40 @@
-const termSequences= [
-    {
-    cmd: "nmap -sV 192.168.1.1",
-    out: ["Starting Nmap scan...", "PORT 443/tcp open https", "PORT 80/tcp  open http"]
-    },
-    {
-    cmd: "hashcat --attack-mode 0 hash.txt",
-    out: ["Loading wordlist...", "Cracking in progress...", "Status: Exhausted — try longer wordlist"]
-    },
-    {
-    cmd: "openssl enc -aes-256-cbc -salt -in secret.txt",
-    out: ["enter aes-256-cbc encryption password:", "Verifying - enter password:", "Encrypted → secret.enc"]
-    }
-]; 
+// Stops clicks from bubbling up to the card //
+function stopBubble(e) { e.stopPropagation(); }
+
+const termSequences = [
+  { cmd: "nmap -sV 192.168.1.1",                out: ["Starting Nmap scan...", "PORT 443/tcp open https", "PORT 80/tcp  open http"] },
+  { cmd: "hashcat --attack-mode 0 hash.txt",     out: ["Loading wordlist...", "Cracking in progress...", "Status: Exhausted"] },
+  { cmd: "openssl enc -aes-256-cbc -in msg.txt", out: ["enter aes-256-cbc password:", "Verifying password: ", "Encrypted msg.enc "] }
+];
 
 let seqIndex = 0;
 
 function runTerminal() {
-    const seq = termSequences[seqIndex % termSequences.length];
-    seqIndex++;
-    const cmdEl = document.getElementById("typewriter");
-    const out1 = document.getElementById("termOut1");
-    const out2 = document.getElementById("termOut2");
-    const out3 = document.getElementById("termOut3");
-    [cmdEl, out1, out2, out3]. forEach(el => {if (el) el.textContent = "";});
-    let i = 0;
-    const typeInterval = setInterval(() => {
-        if (!cmdEl) { clearInterval(typeInterval); return; }
-        cmdEl.textContent += seq.cmd[i];
-         i++;
-        if (i >= seq.cmd.length) {
-             clearInterval(typeInterval);
-             setTimeout(() => { if (out1) out1.textContent = seq.out[0]; }, 400);
-             setTimeout(() => { if (out2) out2.textContent = seq.out[1]; }, 900);
-             setTimeout(() => { if (out3) out3.textContent = seq.out[2]; }, 1400);
-             setTimeout(runTerminal, 4000);
+  const seq  = termSequences[seqIndex++ % termSequences.length];
+  const cmd  = document.getElementById("typewriter");
+  const outs = [
+    document.getElementById("termOut1"),
+    document.getElementById("termOut2"),
+    document.getElementById("termOut3")
+  ];
+  if (!cmd) return;
+  [cmd, ...outs].forEach(el => { if (el) el.textContent = ""; });
+  let i = 0;
+  const t = setInterval(() => {
+    cmd.textContent += seq.cmd[i++];
+    if (i >= seq.cmd.length) {
+      clearInterval(t);
+      outs.forEach((el, idx) => {
+        setTimeout(() => { if (el) el.textContent = seq.out[idx]; }, 400 + idx * 500);
+      });
+      setTimeout(runTerminal, 4500);
     }
-     }, 55);
+  }, 55);
 }
 
 function toggleLesson(card)
 {
+    const card = document.getElementById(id);
     const isOpen = card.classList.contains("open");
     document.querySelectorAll(".lesson-card").forEach(c => c.classList.remove("open"));
     if (!isOpen) card.classList.add("open");
@@ -68,7 +63,7 @@ const phishEmails = [
         subject: "⚠️ URGENT: Your account has been locked",
         body: "Dear Valued Customer, Your PayPal account has been SUSPENDED due to suspicious activity. Click the link below IMMEDIATELY to restore access or your account will be permanently deleted within 24 hours.[Restore Access Now]",
         isPhish: true,
-        explanation: "PHISHING! Clues: 'paypa1.com' (fake domain with a '1'), urgency ('IMMEDIATELY'), threat of deletion." 
+        explanation: "PHISHING! Clues: 'paypa1.com' (fake domain with a '1'),  requires urgency ('IMMEDIATELY') which is a threat of deletion" 
     },
     {
         from: "noreply@github.com",
@@ -82,44 +77,38 @@ const phishEmails = [
         subject: "Action Required: Verify your payment info",
         body: "Hello Amazon Customer, We have detected unusual login attempts on your account. Please verify your credit card details immediately to avoid suspension. Click here: http://amz-verify.net/confirm",
         isPhish: true,
-        explanation: "PHISHING! 'amazone-security.net' is not Amazon's domain. Real Amazon uses amazon.com. Mismatched link URL is a huge red flag."
+        explanation: "PHISHING! 'amazone-security.net' is not Amazon's domain. Real Amazon uses amazon.com and also mismatched link URL is a huge red flag."
     },
     {
         from: "no-reply@accounts.google.com",
         subject: "New sign-in to your Google Account",
         body: "Hi, We noticed a new sign-in to your Google Account on a Windows device. If this was you, you don't need to do anything. If not, visit g.co/accountsecurity— The Google Team",
         isPhish: false,
-        explanation: "LEGIT! Sent from accounts.google.com (official), no pressure tactics, tells you to do nothing if it was you."
+        explanation: "LEGIT! Sent from accounts.google.com (official), no pressure tactics and tells you to do nothing if it was you."
     }
 ];
 
 let currentPhish = 0;
 
-function renderPhish()
-{
-    const email = phishEmails[currentPhish];
-    const fromEl    = document.getElementById("phishFrom");
-    const subjectEl = document.getElementById("phishSubject");
-    const bodyEl    = document.getElementById("phishBody");
-    const resultEl  = document.getElementById("phishResult");
-    if (fromEl)    fromEl.textContent    = email.from;
-    if (subjectEl) subjectEl.textContent = email.subject;
-    if (bodyEl)    bodyEl.textContent    = email.body;
-    if (resultEl)  { resultEl.className = "phish-result"; resultEl.textContent = ""; }
-    document.querySelectorAll(".phish-btns .btn").forEach(b => b.disabled = false); 
+function renderPhish() {
+  const e = phishEmails[currentPhish];
+  document.getElementById("phishFrom").textContent = e.from;
+  document.getElementById("phishSubject").textContent = e.subject;
+  document.getElementById("phishBody").textContent = e.body;
+  const r = document.getElementById("phishResult");
+  r.className   = "phish-result";
+  r.textContent = "";
+  document.querySelectorAll(".phish-btns .btn").forEach(b => b.disabled = false);
 }
 
-function judgePhish(e, guessedPhish)
-{
-    e.stopPropagation();
-    const email = phishEmails[currentPhish];
-    const resultEl = document.getElementById("phishResult");
-    const correct = (guessedPhish === email.isPhish);
-    if (resultEl) {
-        resultEl.textContent = (correct ? " Correct!" : "Wrong!") + email.explanation;
-        resultEl.className   = "phish-result show " + (correct ? "correct" : "wrong");
-    }
-    document.querySelectorAll(".phish-btns .btn").forEach(b => b.disabled = true);
+function judgePhish(e, guessedPhish) {
+  e.stopPropagation();
+  const email = phishEmails[currentPhish];
+  const r     = document.getElementById("phishResult");
+  const ok    = (guessedPhish === email.isPhish);
+  r.textContent = (ok ? "✓ Correct! " : "✗ Wrong. ") + email.explanation;
+  r.className   = "phish-result show " + (ok ? "correct" : "wrong");
+  document.querySelectorAll(".phish-btns .btn").forEach(b => b.disabled = true);
 }
 
 function nextPhish(e)
