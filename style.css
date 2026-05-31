@@ -143,6 +143,10 @@ body{
     color: #fff;
     margin-bottom: 1.5rem;
   }
+.title-accent{
+    color: var(--green);
+    text-shadow: 0 0 30px rgba(0,255,136,0.6), 0 0 60px rgba(0, 255, 136, 0.3);
+}
 .banner-desc{
     font-size: 1.05rem;
     color: var(--dim);
