@@ -340,3 +340,23 @@ function testFirewall(e) {
     }
     quizState.answered = false;
   }
+
+  function answerQuiz(index)
+  {
+    if(quizState.answered) return;
+    quizState.answered = true;
+    const q = quizState.questions[quizState.current];
+    const btns = document.querySelectorAll(".quiz-opt");
+    btns.forEach(b => b.disabled = true);
+    const correct = index === q.ans;
+    if (correct) quizState.score++;
+    btns[q.ans].classList.add("correct");
+    if (!correct) btns[index].classList.add("wrong");
+    document.getElementById("quizScore").textContent = qState.score;
+    const fb = document.getElementById("quizFeedback");
+    fb.textContent = (correct ? "Correct! " : "Wrong. ") + q.fact;
+    fb.className = "quiz-feedback show" + (correct ? "correct-fb" : "wrong-fb");
+    const next = document.getElementById("quizNext");
+    next.textContent = qState.current + 1 >= qState.questions.length ? "See Results" : "Next";
+    next.style.display = "block";
+}
