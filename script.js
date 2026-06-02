@@ -1,7 +1,7 @@
 /* Commenting this code since most of it isn't great and its messed up. 
-I need to spend more time on this (atleast 5-8 more hrs) to get this code perfectly working and clean.
-50% of this js code was generated from AI, as I wanted to get a look at the logic and such but it isn't great compared to my code. 
-Will be prioritizing this first over optimizing CSS and HTML later. 
+I need to spend more time on this (atleast 6-8 more hrs) to get this code perfectly working and clean.
+Almost 50% of this js code was generated from AI (above limit), as I wanted to get a look at the logic and such but it isn't great compared to my code. 
+Will be prioritizing this first over optimizing CSS and HTML later. Basically, cleaning up this AI mess and making my own code but with no errors or bugs(hopefully).  
 
 // Stops clicks from bubbling up to the card //
 function stopBubble(e) { e.stopPropagation(); }
