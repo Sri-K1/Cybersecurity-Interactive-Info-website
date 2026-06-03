@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Cybersecurity-Interactive-Info-website
+=======
+# Cybersecurity Interactive and learning Website: 
+>>>>>>> d8dd9b879a04a33eb83e6b04f17dd60eb17543a8
 
 This is a fun website where users can interact with cool tools related to cybersecurity while learning valuable info about the topics with a short quiz at the end to test the users' knowledge. 
 
@@ -19,6 +23,7 @@ Link: https://cyber-interactive-website.vercel.app/
 My main reason for making a website based on cybersecurity is that I have a passion in cybersecurity and will be pursuing it in college. I think that Cybersecurity is really interesting and cool especially for people who like problem solving, hacking, and such. I also have decent experience with html and css so I wanted to build a website. Coding the javascript part of this website will take hefty amount of time for me, so that will be done soon as possible with hopefully no errors or bugs. 
 
 # Languages used for this website:
+<<<<<<< HEAD
 
 - HTML
 - CSS
@@ -26,4 +31,12 @@ My main reason for making a website based on cybersecurity is that I have a pass
 
 # Postscript: 
 
+=======
+
+- HTML
+- CSS
+- Javascript
+
+# Postscript: 
+>>>>>>> d8dd9b879a04a33eb83e6b04f17dd60eb17543a8
 Halfway through my project, I found out (through a message in #beest-help) that I needed to have commits set-up and commit every 1-2 hrs for my project and I just planned on submitting the project when fully done with no commits. AI was used for this project but not more than 30%, used for small things like coding specific UI element (terminal, flashcard) and the Hero, while also learning new things through AI. Javascript portion of the website isn't done yet and will be scrapped for new code, check the comments. 
