@@ -252,7 +252,6 @@ body{
     background: var(--green);
     color: #000;
 }
-.btn-danger:hover,
 .btn-safe:hover{
     opacity:0.85;
 }
@@ -291,15 +290,15 @@ body{
     border-radius: 8px;
     overflow: hidden;
     cursor:pointer;
-    transition:border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-.lesson-card:hover{border-color:rgba(0,255,136,0.4); box-shadow: var(--glow);}
-.lesson-card.open{border-color: rgba(0,255,136,0.5);}
+.lesson-card:hover{border-color:rgba(0, 255, 136, 0.4); box-shadow: var(--glow);}
+.lesson-card.open{border-color: rgba(0, 255, 136, 0.515);}
 .lesson-head{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.3rem;
     padding: 1.25rem 1.5rem;
     cursor: pointer;
     user-select: none;
@@ -331,19 +330,56 @@ body{
     border-top: 1px solid var(--border);
 }
 .lesson-card.open .lesson-body{display:block;}
-.lesson-body>p {color: var(--text); padding-top: 1rem; margin-bottom: 1.25rem; line-height: 1.75;}
+.lesson-body>p {
+    color: var(--text); 
+    padding-top: 1.2rem; 
+    margin-bottom: 1.25rem; 
+    line-height: 1.75;
+}
 
 /* LESSON EXAMPLE BOX */
-.lesson-example {background: rgba(0,0,0,0.35); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; margin: 1.25rem;}
-.example-label {font-family: var(--mono); font-size: 0.65rem; color: var(--dim); letter-spacing: 0.15em; margin-bottom: 1rem;}
-
+.lesson-example {
+    background: rgba(0,0,0,0.35); 
+    border: 1px solid var(--border);
+     border-radius: 6px; 
+     padding: 1.25rem; 
+     margin: 1.25rem;
+}
+.example-label {
+    font-family: var(--mono); 
+    font-size: 0.65rem; 
+    color: var(--dim); 
+    letter-spacing: 0.15em; 
+    margin-bottom: 1rem;
+}
 /* CAESAR CIPHER */ 
-.cipher-demo{display: flex; flex-direction: column; gap: 0.75rem;}
-.cipher-row {display: flex; align-items:center; gap: 1rem; flex-wrap: wrap;}
-.cipher-label{font-family: var(--mono); font-size: 0.7rem; color: var(--dim); min-width: 75px;}
-.cipher-text{font-family: var(--mono); font-size: 1rem;}
+.cipher-demo{
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.75rem;
+}
+.cipher-row {
+    display: flex; 
+    align-items:center; 
+    gap: 1rem; 
+    flex-wrap: wrap;
+}
+.cipher-label{
+    font-family: var(--mono); 
+    font-size: 0.7rem; 
+    color: var(--dim); 
+    min-width: 75px;
+}
+.cipher-text{
+    font-family: var(--mono); 
+    font-size: 1rem;
+}
 .cipher-text.accent {color: var(--green);}
-.cipher-slider{flex: 1; max-width: 160px; accent-color: var(--green);}
+.cipher-slider{
+    flex: 1; 
+    max-width: 160px; 
+    accent-color: var(--green);
+}
 .cipher-num{font-family: var(--mono); color: var(--green);}
 
 /* PHISHING DEMO */
