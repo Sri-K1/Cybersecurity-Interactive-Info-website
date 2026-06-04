@@ -25,8 +25,10 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - CSS
 - Javascript
 
-Screenshots:
+# Screenshots:
+
 <img width="1439" height="692" alt="Screenshot 2026-06-03 at 6 52 08 PM" src="https://github.com/user-attachments/assets/b406f41b-fbe4-456b-8837-f2cd03db4871" />
+
 <img width="1439" height="692" alt="Screenshot 2026-06-03 at 6 53 57 PM" src="https://github.com/user-attachments/assets/3a6652f4-b72e-4d7b-b654-d92517cd0cf2" />
 
 
