@@ -1,7 +1,7 @@
 /* Commenting this code since most of it isn't great and its messed up. 
 I need to spend more time on this (atleast 6-8 more hrs) to get this code perfectly working and clean.
 Almost 50% of this js code was generated from AI (above limit), as I wanted to get a look at the logic and such but it isn't great compared to my code. 
-Will be prioritizing this first over optimizing CSS and HTML later. Basically, cleaning up this AI mess and making my own code but with no errors or bugs(hopefully).  
+Will be prioritizing this first over optimizing CSS and HTML later. Basically, cleaning up most of this AI code and have working code almost fully made by me but with no errors or bugs.  
 
 // Stops clicks from bubbling up to the card //
 function stopBubble(e) { e.stopPropagation(); }
@@ -65,7 +65,7 @@ for (let char of plain) {
 const phishEmails = [
     {
         from: "security@paypa1.com",
-        subject: "⚠️ URGENT: Your account has been locked",
+        subject: "URGENT: Your account has been locked",
         body: "Dear Valued Customer, Your PayPal account has been SUSPENDED due to suspicious activity. Click the link below IMMEDIATELY to restore access or your account will be permanently deleted within 24 hours.[Restore Access Now]",
         isPhish: true,
         explanation: "PHISHING! Clues: 'paypa1.com' (fake domain with a '1'),  requires urgency ('IMMEDIATELY') which is a threat of deletion" 
