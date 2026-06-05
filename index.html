@@ -13,7 +13,7 @@
         <div class="nav-logo">
             </span>CYBER<span class="logo-accent">LEARN</span>
         </div>
-        <u1 class="nav-links">
+        <ul class="nav-links">
             <li><a href="#home" class="nav-link active">HOME</a></li>
             <li><a href="#lessons" class="nav-link">CYBERSECURITY LESSONS</a></li>
             <li><a href="#tools" class="nav-link">TOOLS</a></li>
@@ -68,7 +68,8 @@
         <p class="section-sub">Click any topic to open the card and learn</p>
     </div>
 
-    <div class="lessons-grid">
+    <div class="lesson-grid">
+
 
         <div class="lesson-card" onclick="toggleLesson(this)">
             <div class="lesson-head">
@@ -82,7 +83,7 @@
              <div class="lesson-body">
                 <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
                 <div class="lesson-example">
-                    <div class="example-label">// EXAMPLE - Caesar Cipher</div> 
+                    <div class="example-label"> EXAMPLE - Caesar Cipher</div> 
                     <div class="cipher-demo">
                         <div class="cipher-row">
                             <span class="cipher-label">Plain:</span>
@@ -137,10 +138,12 @@
                         <div class="fact"> Always hover over links before clicking - the real URL shows in the status bar</div>
                         <div class="fact"> Urgency is the #1 social engineering tactic, emails or messages may display such as "ACT NOW!" to make you fall in the trap</div>
                       </div>
-                    </div> 
-                  </div> 
+                      
+                      </div>
+                      </div> 
+                      </div> 
                   
-                  <div class="lesson-card" id="card-firewalls">
+                      <div class="lesson-card" id="card-firewalls">
                     <div class="lesson-head" onclick="toggleLesson('card-firewalls')">
                       <div class="lesson-icon">🔥🧱</div>
                       <div>
@@ -196,9 +199,15 @@
                       </div>
                       <div class="sql-chips">
                         <span class="chip" onclick="injectSQL(`' OR '1'='1`)">
-                        <span class="chip" onclick="injectSQL(`admin'--`)">Try: admin'--</span>
-                        <span class="chip" onclick="injectSQL('normal_user')">Try: normal user</span>
-                      </div>
+                            Try: ' OR '1'='1
+                        </span>
+                        <span class="chip" onclick="injectSQL(`admin'--`)">
+                            Try: admin'--
+                        </span>
+                        <span class="chip" onclick="injectSQL('normal_user')">
+                            Try: normal user
+                        </span>
+                    </div>
                     </div>
                   </div>
                   <div class="lesson-facts">

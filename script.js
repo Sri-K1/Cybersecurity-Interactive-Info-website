@@ -51,3 +51,21 @@ let charIndex = 0;
       }, 1500);
     }
   }
+
+  /* CAESAR CIPHER */
+  function caesarCipher(text, shift)
+  {
+    return text.replace(/[a-zA-Z]/g, char => {
+      return String.fromCharCode(
+        ((char.charCodeAt(0) -65 + shift) % 26) + 65
+      );
+    });
+    }
+
+    function updateCipher(e) 
+    {
+      e.stopPropagation();
+      const shift = Number(document.getElementById("cipher-shift").value);
+      document.getElementById("shift-num").textContent = shift;
+      document.getElementById("cipher-output").textContent = caesarCipher("HELLO WORLD", shift);
+    }
