@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <meta charset = <"UTF-8" />
+    <meta charset = "UTF-8" />
     <meta name = "viewport" content = "width = device-width, initial-scale=1.0" />
     <title>Cyberlearn </title>
     <link rel="stylesheet" href="style.css" />
@@ -93,7 +93,7 @@
                             <input type="range" min="1" max="25" value="3" class="cipher-slider" id="cipher-shift" oninput="updateCipher(event)" onclick="stopBubble(event)" />
                             <span class="cipher-num" id="shift-num">3</span>
                         </div>
-                        <div class="cipher-row"
+                        <div class="cipher-row">
                             <span class="cipher-label">Encrypted</span>
                             <span class="cipher-text accent" id="cipher-output">KHOOR ZRUOG</span>
                         </div>
@@ -132,7 +132,7 @@
                         </div> 
                         <button class="btn btn-sm btn-ghost"  onclick="nextPhish(event)">NEXT EMAIL →</button> 
                     </div>  
-                    <div class="lesson-facts"
+                    <div class="lesson-facts">
                         <div class="fact"> 91% of all cyberattacks begin with a phishing email</div>
                         <div class="fact"> Always hover over links before clicking - the real URL shows in the status bar</div>
                         <div class="fact"> Urgency is the #1 social engineering tactic, emails or messages may display such as "ACT NOW!" to make you fall in the trap</div>
@@ -195,8 +195,8 @@
                         <div class="sql-result" id="sqlResult">Enter credentials above</div>
                       </div>
                       <div class="sql-chips">
-                        <span class="chip" onclick="injectSQL(quot);">Try: ' OR '1'='1</span>
-                        <span class="chip" onclick="injectSQL(quot);">Try: admin'--</span>
+                        <span class="chip" onclick="injectSQL(`' OR '1'='1`)">
+                        <span class="chip" onclick="injectSQL(`admin'--`)">Try: admin'--</span>
                         <span class="chip" onclick="injectSQL('normal_user')">Try: normal user</span>
                       </div>
                     </div>
@@ -292,7 +292,7 @@
               <div class="footer-text">Open Source Project</div>
               <div class="footer-links">
                 <a href="https://hackclub.com" target="_blank">Hack Club</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://github.com/Sri-K1/Cybersecurity-Interactive-Info-website" target="_blank">GitHub</a>
               </div>
             </div>
           </footer>
