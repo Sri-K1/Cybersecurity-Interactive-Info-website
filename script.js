@@ -1,15 +1,11 @@
 /* Lesson Cards */
 function toggleLesson(card)
 {
-  let card;
   if (typeof card === "string")
   {
     card = document.getElementById(card);
   }
-  else{
-    card = card;
-  }
-  card.classlist.toggle("open");
+  card.classList.toggle("open");
 }
 
 function stopBubble(e)
@@ -154,16 +150,41 @@ let charIndex = 0;
     const port = Number(document.getElementById("fwPort").value);
     const result = document.getElementById("fw-result");
     const allowed = [80,443,25];
-    result.classList.remmove("allow", "deny");
+    result.classList.remove("allow", "deny");
     if(allowed.includes(port))
     {
-      result.textContent = 'ACCESS ALLOWED TO PORT ${port}';
+      result.textContent = `ACCESS ALLOWED TO PORT ${port}`;
       result.classList.add("allow");
     }
     else{
-      result.textContent = 'BLOCKED TO PORT ${port}';
+      result.textContent = `BLOCKED TO PORT ${port}`;
       result.classList.add("deny");
     }
-    result.classList.add("show");
+    result.classList.add("show"); 
    }
 
+   /*SQL Injection*/
+
+   function checkSQL()
+   {
+    const user = document.getElementById("sqlUser").value;
+    const pass = document.getElementById("sqlPass").value;
+    const result = document.getElementById("sqlResult");
+    const input = (user + " " + pass).toUpperCase();
+    const attacks = ["' OR", "--", ";","DROP","SELECT","UNION"];
+    const detected = attacks.some(x => input.includes(x));
+    if(detected)
+    {
+      result.className = "sql-result danger";
+      result.textContent = "SQL Injection pattern was detected!";
+    }
+    else {
+      result.className = "sql-result safe";
+      result.textContent = "Input looks Safe";
+    }
+   }
+   function injectSQL(value)
+   {
+    document.getElementById("sqlUser").value = value;
+    checkSQL();
+   }
