@@ -188,3 +188,51 @@ let charIndex = 0;
     document.getElementById("sqlUser").value = value;
     checkSQL();
    }
+
+/* Password Strength Checker */
+
+function checkPassword()
+{
+  const pw = document.getElementById("pwInput").value;
+  const rules = [
+    {
+      label: "At least 8 characters",
+      pass: pw.length >= 8
+    },
+    {
+      label: "Contains uppercase letter",
+      pass: /[A-Z]/.test(pw)
+    },
+    {
+      label: "Contains lowercase letter",
+      pass: /[a-z]/.test(pw)
+    },
+    {
+      label: "Contains number",
+      pass: /[0-9]/.test(pw)
+    },
+    {
+      label: "Contains special character",
+      pass: /[^A-Za-z0-9]/.test(pw)
+    }
+  ];
+  const score = rules.filter(r => r.pass).length;
+  const labels = [ "Very Weak", "Weak", "Fair", "Good", "Strong", "Excellent"];
+  document.getElementById("pwLabel").textContent = labels[score];
+  document.getElementById("pwBar").style.width = `${score * 20}%`;
+  document.getElementById("pwCheck").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
+}
+
+/* SHA-256 Hashing Interactive */
+async function generateHash()
+{
+  const input = document.getElementById("hashInput").value;
+  if(!input) 
+  {
+    document.getElementById("hashVal").textContent = "-";
+    return;
+  }
+  const buffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input));
+  const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2,"0")).join("");
+  document.getElementById("hashVal").textContent = hash;
+}
