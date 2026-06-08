@@ -236,3 +236,70 @@ async function generateHash()
   const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2,"0")).join("");
   document.getElementById("hashVal").textContent = hash;
 }
+
+/* Quiz Info */
+const quizQuestions = [
+  {
+    question: "What does HTTPS primarily provide?",
+    options: ["Data encryption", "Faster loading", "Better SEO", "Lower bandwidth"],
+    answer: 0,
+    explanation: "HTTPS encrypts data between the user and the website, ensuring privacy and security."
+  },
+  {
+    question:"Which attack tricks users into revealing their information?",
+    options: ["Hashing", "Firewall", "Phishing", "Encryption"],
+    answer: 2,
+    explanation: "Phishing is a type of social engineering attack that tricks users into revealing their information."
+  },
+  {
+    question: "What is the purpose of a firewall?",
+    options: ["Store Passwords", "Encrypt Files", "Create Backups", "Filter Network Traffic"],
+    answer: 3,
+    explanation: "A firewall monitors and filters incoming and outgoing network traffic based on security rules."
+  },
+  {
+    question:"What does SQL Injection target?",
+    options: ["Printers", "Databases", "Websites", "Routers"],
+    answer: 1,
+    explanation: "SQL Injection is a code injection technique that targets databases by inserting malicious SQL statements."
+  },
+  {
+    question:"Which password is the strongest?",
+    options: ["password123", "qwerty", "P@ssw0rd!X9", "1234567"],
+    answer: 2,
+    explanation: "P@ssw0rd!X9 is the strongest because it includes uppercase, lowercase, numbers, and special characters."
+  },
+  {
+    question: "What does Hashing do?",
+    options: ["Encrypts","Conpresses","Creates fixed fingerprints", "stores data in random numbers"],
+    answer: 2,
+    explanation: "Hashing creates a one-way fingerprint"
+  },
+  {
+    question: "Which port commonly uses HTTPS?",
+    options: ["21", "80", "443", "21"],
+    answer: 2,
+    explanation: "Port 443 is commonly used for HTTPS traffic, which is encrypted."
+  },
+  {
+    question:"AES is an example of: ",
+    options: ["Encryption", "Firewall", "Virus", "Phishing"],
+    answer: 0,
+    explanation: "AES is a modern encryption standard"
+  },
+  {
+    question:"What is social engineering?",
+    options: ["Programming", "Manipulating people", "Encryption", "Scanning"],
+    answer: 1,
+    explanation: "Social engineering is when Attackers exploit human psychology/behavior"
+  },
+  {
+    question:"Which is the safest option?",
+    options: ["Clicking unknown links", "Reusuing passwords", "Ignoring software updates", "Using Multifactor Authentication (MFA)"],
+    answer: 3,
+    explanation: "Using Multifactor Authentication (MFA) adds an extra layer of security to your accounts."
+  }
+];
+
+let quizIndex = 0;
+let quizScore = 0; 
