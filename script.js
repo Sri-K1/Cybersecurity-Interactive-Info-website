@@ -143,7 +143,6 @@ let charIndex = 0;
     }
 
    /* Firewall Demo */ 
-
    function testFirewall(e)
    {
     e.stopPropagation();
@@ -164,7 +163,6 @@ let charIndex = 0;
    }
 
    /*SQL Injection*/
-
    function checkSQL()
    {
     const user = document.getElementById("sqlUser").value;
@@ -189,8 +187,7 @@ let charIndex = 0;
     checkSQL();
    }
 
-/* Password Strength Checker */
-
+   /* Password Strength Checker */
 function checkPassword()
 {
   const pw = document.getElementById("pwInput").value;
@@ -220,6 +217,19 @@ function checkPassword()
   const labels = [ "Very Weak", "Weak", "Fair", "Good", "Strong", "Excellent"];
   document.getElementById("pwLabel").textContent = labels[score];
   document.getElementById("pwBar").style.width = `${score * 20}%`;
+  const pwBar = document.getElementById("pwBar");
+  if (score <= 1) 
+  {
+    pwBar.style.background = "#ff4466"; 
+  }
+  else if (score <= 3) 
+  {
+    pwBar.style.background = "#ffd700"; 
+  }
+  else 
+  {
+    pwBar.style.background = "#00ff88"; 
+  }
   document.getElementById("pwCheck").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
 }
 
@@ -301,5 +311,75 @@ const quizQuestions = [
   }
 ];
 
+/* Quiz functions */
 let quizIndex = 0;
 let quizScore = 0; 
+
+function loadQuestion()
+{
+  const q = quizQuestions[quizIndex];
+  document.getElementById("quizQuestion").textContent = q.question;
+  document.getElementById("quizNum").textContent = `Q${quizIndex + 1} / ${quizQuestions.length}`;
+  document.getElementById("quizProgressBar").style.width = `${((quizIndex + 1) / quizQuestions.length) * 100}%`;
+  const letters = ["A","B","C","D"];
+  document.getElementById("quizOptions").innerHTML = q.options.map((option, index) => `<button class="quiz-option" onclick="submitAnswer(${index})"><strong>${letters[index]}.</strong> ${option}</button>`).join("");
+  document.getElementById("quizFeedback").className = "quiz-feedback";
+  document.getElementById("quizNext").style.display = "none";
+}
+function selectAnswer(choice)
+{
+  const q = quizQuestions[quizIndex];
+  const buttons = document.querySelectorAll(".quiz-opt");
+  buttons.forEach(btn => btn.disabled = true);
+  const feedback = document.getElementById("quizFeedback");
+  if(choice === q.answer)
+  {
+    quizScore++;
+    document.getElementById("quizScore").textContent = quizScore;
+    buttons[choice].classList.add("correct");
+    feedback.className = "quiz-feedback correct-fb show";
+    feedback.textContent = "Correct! " + q.explanation;
+  }
+  else {
+    buttons[choice].classList.add("wrong");
+    buttons[q.answer].classList.add("correct");
+    feedback.className = "quiz-feedback wrong-fb show";
+    feedback.textContent = "Incorrect..." + q.explanation;
+  }
+  document.getElementById("quizNext").style.display = "inline-flex";
+}
+function nextQuizQuestions()
+{
+  quizIndex++;
+  if(quizIndex >= quizQuestions.length)
+  {
+    finishQuiz();
+    return;
+  }
+  loadQuestion();
+}
+function finishQuiz()
+{
+  document.getElementById("quizCard").style.display = "none";
+  document.getElementById("quizEnd").style.display = "block";
+  const percent = Math.round(quizScore / quizQuestions.length) * 100;
+  document.getElementById("endScore").textContent = `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
+  let icon = "🎓";
+  let msg = "Great work!";
+  if(percent >= 90)
+  {
+    icon = "🏆";
+    msg = "Cybersecurity EXPERT!!";
+  }
+  else if(percent >= 70)
+  {
+    icon = "🛡️";
+    msg = "Solid cybersecurity knowledge!";
+  }
+  else {
+    icon = "💻";
+    msg = "Keep practicing and learning! Stay Safe online!!";
+  }
+  document.getElementById("endIcon").textContent = icon;
+  document.getElementById("endMsg").textContent = msg;
+}
