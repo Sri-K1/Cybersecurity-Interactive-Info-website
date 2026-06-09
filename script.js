@@ -130,7 +130,7 @@ let charIndex = 0;
       }
 
     }
-
+    
     function nextPhish(e)
     {
       e.stopPropagation();
@@ -369,12 +369,12 @@ function finishQuiz()
   if(percent >= 90)
   {
     icon = "🏆";
-    msg = "Cybersecurity EXPERT!!";
+    msg = "Cybersecurity EXPERT!! You've mastered the essentials of Cybersecurity!";
   }
   else if(percent >= 70)
   {
     icon = "🛡️";
-    msg = "Solid cybersecurity knowledge!";
+    msg = "Solid cybersecurity knowledge! Keep Going!";
   }
   else {
     icon = "💻";
@@ -382,4 +382,14 @@ function finishQuiz()
   }
   document.getElementById("endIcon").textContent = icon;
   document.getElementById("endMsg").textContent = msg;
+}
+
+function restartQuiz()
+{
+  quizIndex = 0;
+  quizScore = 0;
+  document.getElementById("quizScore").textContent = "0";
+  document.getElementById("quizCard").style.display = "block";
+  document.getElementById("quizEnd").style.display = "none";
+  loadQuestion();
 }
