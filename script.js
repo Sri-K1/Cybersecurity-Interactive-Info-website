@@ -15,12 +15,12 @@ function stopBubble(e)
 
 /* Terminal Typewriter Animation */
 const terminalCommands = [
-  "scan network",
-  "check firewall",
-  "encrypt sensitive data",
-  "analyze phishing emails",
-  "run security audits",
-  "verify SQL queries",
+  "scanning network",
+  "checking firewall",
+  "encrypting sensitive data",
+  "analyzing phishing emails",
+  "running security audits",
+  "verifying SQL queries",
 ];
 
 let cmdIndex = 0;
@@ -398,3 +398,11 @@ function restartQuiz()
   document.getElementById("quizEnd").style.display = "none";
   loadQuestion();
 }
+
+/* Initialization */
+window.addEventListener("DOMContentLoaded", () => 
+{
+  typeWriter();
+  loadPhish();
+  loadQuestion();
+});
