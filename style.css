@@ -90,7 +90,7 @@ body{
     border-radius: 50%;
     animation: blink 1.8s infinite;
 }
-/*  BANNER (HERO) */
+/*  BANNER (HERO) - I just called it banner instead of hero :) */
 .banner{
     position: relative;
     min-height: 100vh;
@@ -157,6 +157,14 @@ body{
     display: flex; 
     gap: 1rem; 
     flex-wrap: wrap; 
+}
+.banner-meta{
+    margin-top: 1rem;
+    color: var(--green-dim);
+    font-size: 0.75rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-family:fantasy;
 }
 
 /* TERMINAL WIDGET */
@@ -383,11 +391,39 @@ body{
 .cipher-num{font-family: var(--mono); color: var(--green);}
 
 /* PHISHING DEMO */
-.fake-email {background:#1a1a2e; border: 1px solid #333; border-radius: 6px; padding: 1rem;}
-.email-field{font-family: var(--mono); font-size: 0.75rem; color: var(--dim); margin-bottom: 0.4rem;}
-.email-body{font-size: 0.9rem; margin:0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 4px; line-height: 1.5;}
-.phish-btns{display: flex; gap:0.75rem; margin-top: 0.75rem;}
-.phish-result{margin-top: 0.75rem; font-family: var(--mono); font-size: 0.8rem; padding: 0.5rem; border-radius:4px; display:none}
+.fake-email {
+    background:#1a1a2e; 
+    border: 1px solid #333; 
+    border-radius: 6px; 
+    padding: 1rem;
+}
+.email-field{
+    font-family: var(--mono); 
+    font-size: 1rem; 
+    color: var(--dim);
+     margin-bottom: 0.4rem;
+}
+.email-body{
+    font-size: 1.2rem; 
+    margin:0.75rem 0;
+    padding: 0.75rem; 
+    background: rgba(0,0,0,0.2); 
+    border-radius: 4px; 
+    line-height: 1.5;
+}
+.phish-btns{
+    display: flex; 
+    gap:0.75rem; 
+    margin-top: 0.75rem;
+}
+.phish-result{
+    margin-top: 0.75rem; 
+    font-family: var(--mono); 
+    font-size: 1rem; 
+    padding: 0.5rem; 
+    border-radius:4px; 
+    display:none;
+}
 .phish-result.show{display: block;}
 .phish-result.correct{background: rgba(0,255,136,0.1); color: var(--green);}
 .phish-result.incorrect{background: rgba(255,68,102,0.1); color: var(--red);}
@@ -507,12 +543,14 @@ body{
 .chip:hover{background: rgba(0,255,136,0.15);}
 
 /* FACTS */
-.lesson-facts{display: flex; 
+.lesson-facts{
+    display: flex; 
     flex-direction: column; 
     gap: 0.5rem;
 }
-.fact{font-family: var(--mono); 
-    font-size:0.7rem; 
+.fact{
+    font-family: var(--mono); 
+    font-size:0.9rem; 
     color:var(--dim); 
     padding: 0.5rem 0.75rem; 
     background: rgba(0,0,0,0.2); 
@@ -661,27 +699,35 @@ body{
 }
 
 /* QUIZ */
-.quiz-wrap{
+.quiz-wrap
+{
     max-width:700px;
     margin: 0 auto;
 }
-.quiz-card{
+.quiz-card
+{
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 2rem;
 }
-.quiz-top{
+.quiz-top
+{
+     display: flex; 
+     align-items: center; 
+     justify-content: space-between;
     margin-bottom: 1.75rem;
 }
-.quiz-progress-wrap{
+.quiz-progress-wrap
+{
     height: 4px;
     background: rgba(255,255,255,0.05);
     border-radius: 2px;
     overflow:hidden;
     margin-top: 0.75rem;
 }
-.quiz-progress-bar{
+.quiz-progress-bar
+{
     height: 100%;
     font-family: var(--mono);
     font-size: 0.7rem;
@@ -690,7 +736,8 @@ body{
     border-radius: 2px;
     transition: width 0.4s;
 }
-.quiz-meta{
+.quiz-meta
+{
     display: flex;
     justify-content: space-between;
     font-family: var(--mono);
@@ -698,7 +745,8 @@ body{
     color: var(--dim);
 }
 .accent{color: var(--green);}
-.quiz-question{
+.quiz-question
+{
     font-family: var(--display);
     font-size: 1.1rem;
     font-weight: 700;
@@ -706,13 +754,15 @@ body{
     margin-bottom: 1.5rem;
     line-height: 1.4;
 }
-.quiz-options{
+.quiz-options
+{
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
 }
-.quiz-opt{
+.quiz-opt
+{
     width:100%;
     display:flex;
     align-items: center;
@@ -728,25 +778,27 @@ body{
     cursor: pointer;
     transition: all 0.15s;
 }
-.quiz-opt:hover:not(:disabled){
+.quiz-opt:hover:not(:disabled)
+{
     border-color:var(--green);
     background: rgba(0,255,136,0.05);
     transform: translateX(4px);
 }
-.quiz-opt:disabled{
-    cursor: default;
-}
-.quiz-opt.correct{
+.quiz-opt:disabled{cursor: default;}
+.quiz-opt.correct
+{
     background: rgba(0,255,136,0.1);
     border-color: var(--green);
     color: var(--green);
 }
-.quiz-opt.wrong{
+.quiz-opt.wrong
+{
     background: rgba(255,68,102,0.08);
     border-color: var(--red);
     color: var(--red);
 }
-.opt-letter{
+.opt-letter
+{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -758,9 +810,10 @@ body{
     color: var(--green);
     flex-shrink: 0;
 }
-.quiz-feedback{
+.quiz-feedback
+{
     font-family: var(--mono); 
-    font-size: 0.75rem; 
+    font-size: 0.9rem; 
     line-height: 1.6; 
     padding: 0.75rem 1rem; 
     border-radius: 6px; 
@@ -779,33 +832,37 @@ body{
     border: 1px solid rgba(255,68,102,0.2);
 }
 
-/* QUIZ END SCREEN (RESULTS) */
-.quiz-end{
+/* QUIZ END SCREEN */
+.quiz-end
+{
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 3rem 2rem;
     text-align: center;
 }
-.end-icon{
-    font-size: 3.5rem;
+.end-icon
+{
+    font-size: 3.3rem;
     margin-bottom: 1rem;
 }
-.end-title{
+.end-title
+{
     font-family: var(--display);
     font-size: 1.5rem;
     color: #fff;
     margin-bottom: 0.5rem;
     font-weight: 900;
 }
-.end-score{
+.end-score
+{
     font-family: var(--mono);
     font-size: 2.5rem;
     color: var(--green);
     margin-bottom: 0.5rem;
 }
 .end-msg{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--dim);
     margin-bottom: 2rem;
     line-height: 1.7;
@@ -828,12 +885,12 @@ body{
 }
 .footer-logo{
     font-family: var(--display);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--green);
 }
 .footer-text{
     font-family: var(--mono);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--dim);
 }
 .footer-links{
@@ -842,14 +899,14 @@ body{
 }
 .footer-links a{
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: var(--dim);
     transition: color 0.2s;
     text-decoration: none;
 }
 .footer-links a:hover{color: var(--green);}
 
-/* MOBILE COMPATABILITY CODE */
+/* Mobile Compatability */
 @media (max-width: 768px) {
     .banner{
         flex-direction: column;
