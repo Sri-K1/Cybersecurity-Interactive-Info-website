@@ -236,7 +236,17 @@
                     <div class="tool-sub">See how strong your password really is</div>
                   </div>
                 </div>
-                <input type="text" class="tool-input" id="pwInput" placeholder="Type a password to check..." oninput="checkPassword()" autocomplete="off" />
+                <div class="pw-input-wrap">
+              <input
+                type="password"
+                class="tool-input"
+                id="pwInput"
+                placeholder="Type a password..."
+                oninput="checkPassword()">
+                <button
+                 class="pw-toggle"
+                onclick="togglePassword()">👀</button>
+              </div>
                 <div class="pw-strength-row">
                   <div class="pw-bar-wrap"><div class="pw-bar" id="pwBar"></div></div>
                   <div class="pw-label" id="pwLabel">—</div>

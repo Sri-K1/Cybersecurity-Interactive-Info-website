@@ -130,7 +130,7 @@ let charIndex = 0;
       }
 
     }
-    
+
     function nextPhish(e)
     {
       e.stopPropagation();
@@ -210,7 +210,7 @@ function checkPassword()
     },
     {
       label: "Contains special character",
-      pass: /[^A-Za-z0-9]/.test(pw)
+      pass: /[^A-Z,a-z,0-9]/.test(pw)
     }
   ];
   const score = rules.filter(r => r.pass).length;
@@ -231,6 +231,11 @@ function checkPassword()
     pwBar.style.background = "#00ff88"; 
   }
   document.getElementById("pwCheck").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
+}
+function togglePassword() // new function to toggle password visibility for the password interactive 
+{
+  const input = document.getElementById("pwInput");
+  input.type = input.type === "password" ? "text" : "password";
 }
 
 /* SHA-256 Hashing Interactive */
@@ -295,19 +300,19 @@ const quizQuestions = [
     question:"AES is an example of: ",
     options: ["Encryption", "Firewall", "Virus", "Phishing"],
     answer: 0,
-    explanation: "AES is a modern encryption standard"
+    explanation: "AES is a modern high security encryption standard"
   },
   {
     question:"What is social engineering?",
     options: ["Programming", "Manipulating people", "Encryption", "Scanning"],
     answer: 1,
-    explanation: "Social engineering is when Attackers exploit human psychology/behavior"
+    explanation: "Social engineering is when Attackers exploit human psychology/behavior to gain access to confidential information from users."
   },
   {
     question:"Which is the safest option?",
     options: ["Clicking unknown links", "Reusuing passwords", "Ignoring software updates", "Using Multifactor Authentication (MFA)"],
     answer: 3,
-    explanation: "Using Multifactor Authentication (MFA) adds an extra layer of security to your accounts."
+    explanation: "Using Multifactor Authentication (MFA) adds an extra layer of security to your accounts, making it harder for attackers to hack your account."
   }
 ];
 
