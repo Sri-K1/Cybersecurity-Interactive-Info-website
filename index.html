@@ -11,21 +11,21 @@
     <!-- NAV -->
     <nav class="navbar">
         <div class="nav-logo">
-            </span>CYBER<span class="logo-accent">LEARN</span>
+            CYBER<span class="logo-accent">LEARN</span>
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-link active">HOME</a></li>
             <li><a href="#lessons" class="nav-link">CYBERSECURITY LESSONS</a></li>
             <li><a href="#tools" class="nav-link">TOOLS</a></li>
             <li><a href="#quiz" class="nav-link">QUIZ</a></li>    
-        </u1>
+        </ul>
         <div class="nav-status">
             <span class="status-dot"></span>SECURE
         </div>
        </nav>
 
        <!-- BANNER (HERO) -->
-       <section class="banner" id="banner">
+       <section class="banner" id="home">
         <div class="banner-grid"></div>
         <div class="scanline"></div>
         <div class="banner-content">
@@ -211,7 +211,7 @@
                     </div>
                   </div>
                   <div class="lesson-facts">
-                    <div class="fact"> SQL injection is still the #1 web vulnerability (OWASP Top 10)</div>
+                    <div class="fact"> SQL injection is still the #1 web vulnerability</div>
                     <div class="fact"> Defence: Always use parameterised queries / prepared statements</div>
                     <div class="fact"> The 2012 LinkedIn breach exposed 117M passwords via SQL injection</div>
                   </div>
@@ -266,7 +266,7 @@
             <div class="section-header">
               <div class="section-tag">03 / QUIZ</div>
               <h2 class="section-title">TEST YOUR SKILLS</h2>
-              <p class="section-sub">10 questions. No time limit. Let's see how much you've learned so far (progress check).</p>
+              <p class="section-sub">10 questions. No time limit. Let's see how much you've learned.</p>
             </div>
             <div class="quiz-wrap">
               <div class="quiz-card" id="quizCard">
@@ -275,14 +275,14 @@
                     <div class="quiz-progress-bar" id="quizProgressBar"></div>
                   </div>
                   <div class="quiz-meta">
-                    <span id="quizNum">Q1 / 10</span>
-                    <span>Score: <span class="accent" id="quizScore">0</span></span>
+                    <span id="quizNum">Q1 / 10 </span>
+                    <span> Score: <span class="accent" id="quizScore">0</span></span>
                   </div>
                 </div>
-                <div class="quiz-questions" id="quizQuestion">Loading...</div>
+                <div class="quiz-question" id="quizQuestion">Loading...</div>
                 <div class="quiz-options" id="quizOptions"></div>
                 <div class="quiz-feedback" id="quizFeedback"></div>
-                <button class="btn btn-primary" id="quizNext" style="display:none" onclick="nextQuizQ()">NEXT →</button>
+                <button class="btn btn-primary" id="quizNext" style="display:none" onclick="nextQuizQ()">NEXT</button>
               </div>
               <div class="quiz-end" id="quizEnd" style="display:none">
                 <div class="end-icon" id="endIcon"></div>
@@ -307,6 +307,5 @@
           </footer>
        <script src="script.js"></script>
         </body>
-        </html>
-      </section> 
+      </html> 
        
