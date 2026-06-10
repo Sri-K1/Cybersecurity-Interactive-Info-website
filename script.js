@@ -286,13 +286,13 @@ const quizQuestions = [
   },
   {
     question: "What does Hashing do?",
-    options: ["Encrypts","Conpresses","Creates fixed fingerprints", "stores data in random numbers"],
+    options: ["Encrypts","Compresses","Creates fixed fingerprints", "stores data in random numbers"],
     answer: 2,
     explanation: "Hashing creates a one-way fingerprint"
   },
   {
     question: "Which port commonly uses HTTPS?",
-    options: ["21", "80", "443", "21"],
+    options: ["21", "80", "443", "25"],
     answer: 2,
     explanation: "Port 443 is commonly used for HTTPS traffic, which is encrypted."
   },
@@ -310,7 +310,7 @@ const quizQuestions = [
   },
   {
     question:"Which is the safest option?",
-    options: ["Clicking unknown links", "Reusuing passwords", "Ignoring software updates", "Using Multifactor Authentication (MFA)"],
+    options: ["Clicking unknown links", "Reusing passwords", "Ignoring software updates", "Using Multifactor Authentication (MFA)"],
     answer: 3,
     explanation: "Using Multifactor Authentication (MFA) adds an extra layer of security to your accounts, making it harder for attackers to hack your account."
   }
@@ -324,17 +324,17 @@ function loadQuestion()
 {
   const q = quizQuestions[quizIndex];
   document.getElementById("quizQuestion").textContent = q.question;
-  document.getElementById("quizNum").textContent = `Q${quizIndex + 1} / ${quizQuestions.length}`;
+  document.getElementById("quizNum").textContent = `Question${quizIndex + 1} of ${quizQuestions.length}`;
   document.getElementById("quizProgressBar").style.width = `${((quizIndex + 1) / quizQuestions.length) * 100}%`;
   const letters = ["A","B","C","D"];
-  document.getElementById("quizOptions").innerHTML = q.options.map((option, index) => `<button class="quiz-option" onclick="submitAnswer(${index})"><strong>${letters[index]}.</strong> ${option}</button>`).join("");
+  document.getElementById("quizOptions").innerHTML = q.options.map((option, index) => `<button class="quiz-option" onclick="selectAnswer(${index})"><strong>${letters[index]}.</strong> ${option}</button>`).join("");
   document.getElementById("quizFeedback").className = "quiz-feedback";
   document.getElementById("quizNext").style.display = "none";
 }
 function selectAnswer(choice)
 {
   const q = quizQuestions[quizIndex];
-  const buttons = document.querySelectorAll(".quiz-opt");
+  const buttons = document.querySelectorAll(".quiz-option");
   buttons.forEach(btn => btn.disabled = true);
   const feedback = document.getElementById("quizFeedback");
   if(choice === q.answer)
@@ -353,7 +353,7 @@ function selectAnswer(choice)
   }
   document.getElementById("quizNext").style.display = "inline-flex";
 }
-function nextQuizQuestions()
+function nextQuiz()
 {
   quizIndex++;
   if(quizIndex >= quizQuestions.length)
@@ -367,7 +367,7 @@ function finishQuiz()
 {
   document.getElementById("quizCard").style.display = "none";
   document.getElementById("quizEnd").style.display = "block";
-  const percent = Math.round(quizScore / quizQuestions.length) * 100;
+  const percent = Math.round((quizScore / quizQuestions.length) * 100);
   document.getElementById("endScore").textContent = `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
   let icon = "🎓";
   let msg = "Great work!";
@@ -381,9 +381,14 @@ function finishQuiz()
     icon = "🛡️";
     msg = "Solid cybersecurity knowledge! Keep Going!";
   }
+  else if(percent >= 60)
+  {
+    icon = "💻"
+    msg = "Decent foundation, you still need to learn!"
+  }
   else {
-    icon = "💻";
-    msg = "Keep practicing and learning! Stay Safe online!!";
+    icon = "📚";
+    msg = "Keep practicing and learning! You'll improve with more studying!";
   }
   document.getElementById("endIcon").textContent = icon;
   document.getElementById("endMsg").textContent = msg;

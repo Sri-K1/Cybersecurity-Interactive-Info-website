@@ -288,14 +288,19 @@
                     <div class="quiz-progress-bar" id="quizProgressBar"></div>
                   </div>
                   <div class="quiz-meta">
-                    <span id="quizNum">Q1 / 10 </span>
-                    <span> Score: <span class="accent" id="quizScore">0</span></span>
-                  </div>
+                    <div class="quiz-question-counter" id="quizNum">
+                         Question 1 / 10
+                     </div>
+                     <div class="quiz-score-counter">
+                           Score:
+                           <span class="accent" id="quizScore">0</span>
+                       </div>  
+                    </div>
                 </div>
                 <div class="quiz-question" id="quizQuestion">Loading...</div>
                 <div class="quiz-options" id="quizOptions"></div>
                 <div class="quiz-feedback" id="quizFeedback"></div>
-                <button class="btn btn-primary" id="quizNext" style="display:none" onclick="nextQuizQ()">NEXT</button>
+                <button class="btn btn-primary" id="quizNext" style="display:none" onclick="nextQuiz()">Next Question</button>
               </div>
               <div class="quiz-end" id="quizEnd" style="display:none">
                 <div class="end-icon" id="endIcon"></div>
