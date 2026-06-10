@@ -26,10 +26,10 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - Javascript
 
 # Screenshots:
-
-<img width="1439" height="692" alt="Screenshot 2026-06-03 at 6 52 08 PM" src="https://github.com/user-attachments/assets/b406f41b-fbe4-456b-8837-f2cd03db4871" />
-
-<img width="1439" height="692" alt="Screenshot 2026-06-03 at 6 53 57 PM" src="https://github.com/user-attachments/assets/3a6652f4-b72e-4d7b-b654-d92517cd0cf2" />
+<img width="1438" height="689" alt="Screenshot 2026-06-10 at 4 20 54 PM" src="https://github.com/user-attachments/assets/96b099f2-4153-4fe0-939a-239fae164a5d" />
+<img width="1438" height="689" alt="Screenshot 2026-06-10 at 4 21 20 PM" src="https://github.com/user-attachments/assets/c43779d6-d334-4ced-a922-5c7be1db4b1a" />
+<img width="1438" height="689" alt="Screenshot 2026-06-10 at 4 21 56 PM" src="https://github.com/user-attachments/assets/78d0a7f6-e681-4ecb-9d2e-5668d33fe3ab" />
+<img width="1438" height="689" alt="Screenshot 2026-06-10 at 4 22 09 PM" src="https://github.com/user-attachments/assets/1e7762bd-0917-4607-b82c-7ccf2e470b46" />
 
 
 # Postscript: 
