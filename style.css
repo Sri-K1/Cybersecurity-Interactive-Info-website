@@ -14,7 +14,7 @@
 --mono: 'copperplate', monospace; 
 --display: 'Impact', sans-serif; 
 --body-font: 'Rajdhani', sans-serif;
---glow:      0 0 20px rgba(0, 255, 136, 0.2);
+--glow: 0 0 20px rgba(0, 255, 136, 0.2);
 --intense-glow: 0 0 30px rgba(0, 255, 136, 0.4);
 }
 
@@ -231,7 +231,6 @@ body{
     border-radius: 4px;
     border:none;
     cursor:pointer;
-    text-decoration: none;
     transition: all 0.3s;
 }
 .btn-primary{
@@ -309,13 +308,11 @@ body{
 .lesson-card.open{border-color: rgba(0, 255, 136, 0.515);}
 .lesson-head{
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 1.3rem;
     padding: 1.25rem 1.5rem;
     cursor: pointer;
     user-select: none;
-    width: 100%;
 }
 .lesson-icon{font-size: 1.75rem; flex-shrink: 0;}
 .lesson-num{
@@ -344,7 +341,6 @@ body{
 }
 .lesson-card.open .lesson-body{display:block;}
 .lesson-body>p {
-    color: var(--text); 
     padding-top: 1.2rem; 
     margin-bottom: 1.25rem; 
     line-height: 1.75;

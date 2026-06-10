@@ -8,7 +8,7 @@ function toggleLesson(card)
   card.classList.toggle("open");
 }
 
-function stopBubble(e)
+function stopBubble(e) // stops the encryption card from closing when using the Caesar Cipher interactive, which is why I implemented this code. 
 {
   e.stopPropagation();
 }
@@ -162,32 +162,25 @@ let charIndex = 0;
     result.classList.add("show"); 
    }
 
-   /*SQL Injection*/
-   function checkSQL()
-   {
+/*SQL Injection*/
+function checkSQL() 
+{
     const user = document.getElementById("sqlUser").value;
     const pass = document.getElementById("sqlPass").value;
     const result = document.getElementById("sqlResult");
-    const input = (user + " " + pass).toUpperCase();
-    const attacks = ["' OR", "--", ";","DROP","SELECT","UNION"];
-    const detected = attacks.some(x => input.includes(x));
-    if(detected)
-    {
-      result.className = "sql-result danger";
-      result.textContent = "SQL Injection pattern was detected!";
-    }
-    else {
-      result.className = "sql-result safe";
-      result.textContent = "Input looks Safe";
-    }
-   }
-   function injectSQL(value)
-   {
-    document.getElementById("sqlUser").value = value;
-    checkSQL();
-   }
+    const input = `${user} ${pass}`.toUpperCase();
+    const attacks = ["' OR", "--", ";", "DROP", "SELECT", "UNION"];
+    const detected = attacks.some(attack => input.includes(attack));
+    result.className = `sql-result ${detected ? "danger" : "safe"}`;
+    result.textContent = detected ? "SQL Injection pattern detected!" : "Input looks safe.";
+  }
+function injectSQL(value)
+{
+  document.getElementById("sqlUser").value = value;
+  checkSQL();
+}
 
-   /* Password Strength Checker */
+/* Password Strength Checker */
 function checkPassword()
 {
   const pw = document.getElementById("pwInput").value;
@@ -216,19 +209,19 @@ function checkPassword()
   const score = rules.filter(r => r.pass).length;
   const labels = [ "Very Weak", "Weak", "Fair", "Good", "Strong", "Excellent"];
   document.getElementById("pwLabel").textContent = labels[score];
-  document.getElementById("pwBar").style.width = `${score * 20}%`;
   const pwBar = document.getElementById("pwBar");
+  pwBar.style.width = `${score * 20}%`;
   if (score <= 1) 
   {
-    pwBar.style.background = "#ff4466"; 
+    pwBar.style.background = "var(--red)"; 
   }
   else if (score <= 3) 
   {
-    pwBar.style.background = "#ffd700"; 
+    pwBar.style.background = "var(--yellow)"; 
   }
   else 
   {
-    pwBar.style.background = "#00ff88"; 
+    pwBar.style.background = "var(--green)"; 
   }
   document.getElementById("pwChecks").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
 }
@@ -365,8 +358,8 @@ function nextQuiz()
 }
 function finishQuiz()
 {
-  document.getElementById("quizCard").style.display = "none";
-  document.getElementById("quizEnd").style.display = "block";
+  document.getElementById("quizCard").classList.add("hidden");
+  document.getElementById("quizEnd").classList.remove("hidden");document.getElementById("quizEnd").classList.remove("hidden");
   const percent = Math.round((quizScore / quizQuestions.length) * 100);
   document.getElementById("endScore").textContent = `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
   let icon = "🎓";
