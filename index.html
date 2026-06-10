@@ -14,7 +14,7 @@
             CYBER<span class="logo-accent">LEARN</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">HOME</a></li>
+            <li><a href="#home" class="nav-link">HOME</a></li>
             <li><a href="#lessons" class="nav-link">CYBERSECURITY LESSONS</a></li>
             <li><a href="#tools" class="nav-link">TOOLS</a></li>
             <li><a href="#quiz" class="nav-link">QUIZ</a></li>    
@@ -168,8 +168,8 @@
                                 <div class="fw-rule allow">ALLOW - PORT 25 (SMTP)</div>
                             </div>
                             <div class="fw-test">
-                              <input type="number" class="fw-input" id="fwPort" placeholder="Test a port number e.g. 443" min="1" max="65535" onclick="stopBubble(event)" oninput="stopBubble(event)"/>
-                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">TEST→</button>
+                              <input type="number" class="fw-input" id="fwPort" placeholder="Test a port number e.g. 443" min="1" max="65535" onclick="stopBubble(event)" oninput="stopBubble(event)" onkeydown="if(event.key === 'Enter') {testFirewall(event);}"/>
+                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">TEST</button>
                              </div>
                              <div class="fw-result" id="fw-result"></div>
                         </div>
@@ -248,8 +248,7 @@
                 oninput="checkPassword()">
                 <button
                  class="pw-toggle"
-                onclick="togglePassword()">
-                👀
+                onclick="togglePassword()">👀
               </button>
               </div>
                 <div class="pw-strength-row">
