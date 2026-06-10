@@ -717,20 +717,20 @@ body{
 }
 .quiz-top
 {
-     display: flex; 
-     align-items: center; 
-     justify-content: space-between;
-    margin-bottom: 1.75rem;
+    display: flex; 
+    flex-direction: column;
+    gap: 16px;
 }
 .quiz-progress-wrap
 {
-    height: 4px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 2px;
-    overflow:hidden;
-    margin-top: 0.75rem;
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,.08);
+    border-radius: 999px;
+    overflow: hidden;
 }
-.quiz-progress{
+.quiz-progress
+{
     width: 100%;
     height: 10px;
     background: rgba(255,255,255,.08);
@@ -738,27 +738,36 @@ body{
     overflow: hidden;
     margin: 1rem 0 1.5rem 0;
 }
-.quizProgressBar{
-    height: 100%;
+.quiz-progress-bar
+{
     width: 0%;
+    height: 100%;
     background: linear-gradient(90deg,#00ff88,#00d4ff);
-    transition: width .35s ease;
+    transition: width .4s ease;
 }
-.quiz-meta{
+.quiz-meta
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
 }
-.quiz-question-counter{
+.quiz-question-counter
+{
     color: rgba(255,255,255,.75);
     font-size: 0.95rem;
     letter-spacing: 0.05em;
+    white-space: nowrap;
+    min-width: 160px;
+    font-weight: 600;
 }
-.quiz-score-counter{
-    padding: .55rem 1rem;
+.quiz-score-counter
+{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
     border-radius: 999px;
+    min-width: 110px;
     background: rgba(0,255,136,.08);
     border: 1px solid rgba(0,255,136,.18);
     color: #00ff88;
@@ -805,12 +814,14 @@ body{
     background: rgba(0,255,136,0.1);
     border-color: var(--green);
     color: var(--green);
+    transform: scale(1.01);
 }
 .quiz-opt.wrong
 {
     background: rgba(255,68,102,0.08);
     border-color: var(--red);
     color: var(--red);
+    animation: shake .25s ease;
 }
 .opt-letter
 {
@@ -830,12 +841,13 @@ body{
     font-family: var(--mono); 
     font-size: 0.9rem; 
     line-height: 1.6; 
-    padding: 0.75rem 1rem; 
-    border-radius: 6px; 
+    padding: 14px 18px; 
+    border-radius: 12px; 
     display: none; 
-    margin-bottom: 1rem; 
+    margin-top: 20px; 
 }
-.quiz-feedback.show{display: block;}
+
+.quiz-feedback.show{display: block; margin-bottom: 24px}
 .quiz-feedback.correct-fb{
     background: rgba(0,255,136,0.07); 
     color: var(--green);

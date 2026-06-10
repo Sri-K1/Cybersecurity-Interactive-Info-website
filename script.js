@@ -230,7 +230,7 @@ function checkPassword()
   {
     pwBar.style.background = "#00ff88"; 
   }
-  document.getElementById("pwCheck").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
+  document.getElementById("pwChecks").innerHTML = rules.map(rule => `<div class="pw-check ${rule.pass ? "pass" : ""}">${rule.label}</div>`).join("");
 }
 function togglePassword() // new function to toggle password visibility for the password interactive 
 {
@@ -324,7 +324,7 @@ function loadQuestion()
 {
   const q = quizQuestions[quizIndex];
   document.getElementById("quizQuestion").textContent = q.question;
-  document.getElementById("quizNum").textContent = `Question${quizIndex + 1} of ${quizQuestions.length}`;
+  document.getElementById("quizNum").textContent = `Question ${quizIndex + 1} of ${quizQuestions.length}`;
   document.getElementById("quizProgressBar").style.width = `${((quizIndex + 1) / quizQuestions.length) * 100}%`;
   const letters = ["A","B","C","D"];
   document.getElementById("quizOptions").innerHTML = q.options.map((option, index) => `<button class="quiz-option" onclick="selectAnswer(${index})"><strong>${letters[index]}.</strong> ${option}</button>`).join("");
