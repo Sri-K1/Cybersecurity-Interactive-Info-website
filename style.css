@@ -56,13 +56,14 @@ body{
     backdrop-filter: blur(10px);
 }
 
-.navbar-logo {
+.nav-logo {
     font-family: var(--display);
-    font-size: 1rem;
-    font-weight: 900;
+    font-size: 1.1rem;
     color: var(--green);
-    text-shadow: var(--glow);
-    letter-spacing: 0.1em;
+    text-shadow: var(--intense-glow);
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
 }
 .logo-bracket{color:var(--dim);}
 .logo-accent{color: #fff;}
@@ -73,9 +74,9 @@ body{
     color: var(--text-dim); 
     transition: color 0.3s ease;
 }
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
     color: var(--green);
-    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.909);
 }
 .nav-link.active {color:var(-green);}
 .nav-status {
