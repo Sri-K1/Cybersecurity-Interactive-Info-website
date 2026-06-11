@@ -356,44 +356,36 @@ function nextQuiz()
   }
   loadQuestion();
 }
-function finishQuiz()
-{
+function finishQuiz() {
   document.getElementById("quizCard").classList.add("hidden");
-  document.getElementById("quizEnd").classList.remove("hidden");document.getElementById("quizEnd").classList.remove("hidden");
+  document.getElementById("quizEnd").classList.remove("hidden");
   const percent = Math.round((quizScore / quizQuestions.length) * 100);
-  document.getElementById("endScore").textContent = `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
+  document.getElementById("endScore").textContent =
+  `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
   let icon = "🎓";
   let msg = "Great work!";
-  if(percent >= 90)
-  {
+  if (percent >= 90) {
     icon = "🏆";
     msg = "Cybersecurity EXPERT!! You've mastered the essentials of Cybersecurity!";
-  }
-  else if(percent >= 70)
-  {
+  } else if (percent >= 70) {
     icon = "🛡️";
     msg = "Solid cybersecurity knowledge! Keep Going!";
-  }
-  else if(percent >= 60)
-  {
-    icon = "💻"
-    msg = "Decent foundation, you still need to learn!"
-  }
-  else {
+  } else if (percent >= 60) {
+    icon = "💻";
+    msg = "Decent foundation, you still need to learn!";
+  } else {
     icon = "📚";
     msg = "Keep practicing and learning! You'll improve with more studying!";
   }
   document.getElementById("endIcon").textContent = icon;
   document.getElementById("endMsg").textContent = msg;
 }
-
-function restartQuiz()
-{
+function restartQuiz() {
   quizIndex = 0;
   quizScore = 0;
   document.getElementById("quizScore").textContent = "0";
-  document.getElementById("quizCard").style.display = "block";
-  document.getElementById("quizEnd").style.display = "none";
+  document.getElementById("quizCard").classList.remove("hidden");
+  document.getElementById("quizEnd").classList.add("hidden");
   loadQuestion();
 }
 
