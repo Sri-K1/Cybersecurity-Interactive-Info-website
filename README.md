@@ -26,7 +26,8 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - CSS
 - Javascript
 - VS Code
-- AI for learning and help (not more than 30%)
+- AI for learning and help and debugging some issues 
+- Prettier (VS Code extension for clean code formatting)
 
 # Screenshots:
 <img width="1438" height="689" alt="Screenshot 2026-06-10 at 4 20 54 PM" src="https://github.com/user-attachments/assets/96b099f2-4153-4fe0-939a-239fae164a5d" />
