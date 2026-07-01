@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <head>
-    <meta charset = "UTF-8" />
-    <meta name = "viewport" content = "width = device-width, initial-scale=1.0" />
-    <title>Cyberlearn </title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+<meta charset = "UTF-8" />
+<meta name = "viewport" content = "width = device-width, initial-scale=1.0" />
+<title>Cyberlearn </title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body> 
- 
-    <!-- NAV -->
+    <!-- navbar -->
     <nav class="navbar">
         <div class="nav-logo">
-            CYBER<span class="logo-accent">LEARN</span>
+            Cyber<span class="logo-accent">Masters</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#home" class="nav-link">HOME</a></li>
-            <li><a href="#lessons" class="nav-link">CYBERSECURITY LESSONS</a></li>
-            <li><a href="#tools" class="nav-link">TOOLS</a></li>
-            <li><a href="#quiz" class="nav-link">QUIZ</a></li>    
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#lessons" class="nav-link">Cyber Lessons</a></li>
+            <li><a href="#tools" class="nav-link">Fun tools</a></li>
+            <li><a href="#quiz" class="nav-link">Quiz</a></li>    
         </ul>
         <div class="nav-status">
             <span class="status-dot"></span>SECURE
         </div>
        </nav>
-
-       <!-- BANNER (HERO) -->
+       <!-- Banner-->
        <section class="banner" id="home">
         <div class="banner-grid"></div>
         <div class="scanline"></div>
         <div class="banner-content">
-            <div class="banner-tag">//HACKCLUB PROJECT</div>
             <h1 class="banner-title">
                 LEARN<br />
                 <span class="title-accent">CYBER</span><br/>
@@ -63,35 +62,32 @@
     </div>
 </section>
 
-<!-- LESSONS --> 
+<!-- Cyber Lessons --> 
 <section class="section" id="lessons">
     <div class="section-header">
-        <div class="section-tag">01 / LESSONS</div>
-        <h2 class="section-title">CORE TOPICS</h2>
-        <p class="section-sub">Click any topic to open the card and learn</p>
+        <div class="section-tag">Cyber Lessons</div>
+        <h2 class="section-title">Learn the Basics</h2>
     </div>
 
     <div class="lesson-grid">
 
 
-        <div class="lesson-card" onclick="toggleLesson(this)">
-            <div class="lesson-head">
-                <div class="lesson-icon">🔐</div>
+      <div class="lesson-card" onclick="toggleLesson(this)">
+          <div class="lesson-head">
                 <div>
                 <div class="lesson-num">01</div>
                 <div class="lesson-title">ENCRYPTION</div>
              </div>
-              <div class="lesson-arrow">▼</div>
             </div>
              <div class="lesson-body">
-                <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
+            <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
                 <div class="lesson-example">
-                    <div class="example-label"> EXAMPLE - Caesar Cipher</div> 
+                    <div class="example-label"> Example: Caesar Cipher</div> 
                     <div class="cipher-demo">
                         <div class="cipher-row">
-                            <span class="cipher-label">Plain:</span>
-                            <span class="cipher-text" id="plain-text">HELLO WORLD</span> 
-                        </div>
+                          <span class="cipher-label">Plain:</span>
+                          <span class="cipher-text" id="plain-text">Hey friend</span> 
+                      </div>
                           <div class="cipher-row">
                             <span class="cipher-label">Shift:</span>
                             <input type="range" min="1" max="25" value="3" class="cipher-slider" id="cipher-shift" oninput="updateCipher(event)" onclick="stopBubble(event)" />
@@ -104,9 +100,9 @@
                     </div>
                   </div>
                 <div class="lesson-facts">
-                    <div class="fact"> Modern encryption uses AES-256 — which would take billions of years to crack by brute force.</div>
-                    <div class="fact"> HTTPS uses TLS encryption to protect everything that you send online.</div>
-                    <div class="fact"> End-to-end encryption means even the app provider can't read your messages.</div>
+                    <div class="fact"> Modern encryption uses AES-256 — which would take billions of years to crack by brute force by a hacker who would try to hack in</div>
+                    <div class="fact"> HTTPS uses TLS encryption to protect everything that you send online like messages or photos</div>
+                    <div class="fact"> End-to-end encryption means that only you and the recipient can read your messages, not even app provider can see your messages</div>
                  </div>
              </div>
          </div>
@@ -223,10 +219,10 @@
             </div>
           </section>
         
-          <!-- TOOLS --> 
+          <!-- Tools e.g. pass checker, hashing --> 
           <section class="section section-dark" id="tools">
             <div class="section-header">
-              <div class="section-tag">02 / TOOLS</div>
+              <div class="section-tag">Cyber Tools</div>
               <h2 class="section-title">INTERACTIVE TOOLS</h2>
               <p class="section-sub">Hands-on demos to gain more understanding on these concepts</p>
             </div>
@@ -261,26 +257,26 @@
                 <div class="tool-header">
                   <span class="tool-icon">🔢</span>
                   <div>
-                    <div class="tool-title">HASHING DEMO</div>
+                    <div class="tool-title">Hashing</div>
                     <div class="tool-sub">One-way fingerprints are basically impossible to reverse</div>
                   </div>
                 </div>
                 <input type="text" class="tool-input" id="hashInput" placeholder="Type anything to hash..." oninput="generateHash()" autocomplete="off" />
                 <div class="hash-box">
-                  <div class="hash-box-label">SIMULATED SHA-256 OUTPUT</div>
+                  <div class="hash-box-label">SHA-256 Output</div>
                   <div class="hash-val" id="hashVal">—</div>
                 </div>
-                <div class="hash-tip">Change even ONE character — the entire hash changes completely.</div>
+                <div class="hash-tip">Changing even ONE character — the entire hash would change completely</div>
               </div>
             </div>
           </section>
 
-          <!-- QUIZ -->
+          <!-- Quiz section -->
           <section class="section" id="quiz">
             <div class="section-header">
-              <div class="section-tag">03 / QUIZ</div>
-              <h2 class="section-title">TEST YOUR SKILLS</h2>
-              <p class="section-sub">10 questions. No time limit. Let's see how much you've learned.</p>
+              <div class="section-tag">Quiz</div>
+              <h2 class="section-title">Let's test your Cybersecurity Knowledge</h2>
+              <p class="section-sub">10 questions, No time limit, Use your Cyber knowledge</p>
             </div>
             <div class="quiz-wrap">
               <div class="quiz-card" id="quizCard">
@@ -313,10 +309,10 @@
             </div>
           </section>
         
-          <!-- FOOTER -->
+          <!-- Footer -->
           <footer class="footer">
             <div class="footer-inner">
-              <div class="footer-logo">CYBERLEARN</div>
+              <div class="footer-logo">CyberMasters</div>
               <div class="footer-text">Open Source Project</div>
               <div class="footer-links">
                 <a href="https://hackclub.com" target="_blank">Hack Club</a>
