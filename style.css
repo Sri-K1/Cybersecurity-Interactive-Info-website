@@ -20,11 +20,11 @@
 html {scroll-behavior: smooth;}
 body{
   min-height: 100vh;
-  background: linear-gradient(to bottom, #0f0f39, #283b51 70%, #090a0f);
-  overflow: auto;
+  background: linear-gradient(to bottom, #19196c, #294566 70%, #1f2233);
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {width: 8px;}
-::-webkit-scrollbar-track {background: var(--bg);}
+::-webkit-scrollbar-track {background:black;}
 ::-webkit-scrollbar-thumb {background: var(--green); border-radius: 8px;}
 
 /* nav */
@@ -51,14 +51,14 @@ body{
     align-items: center;
     letter-spacing: 2px;
 }
-.logo-bracket{color:var(--dim);}
-.logo-accent{color: #fff;}
+.logo-bracket{color:var(--text);}
+.logo-accent{color: #ddefd5;}
 .nav-links{display:flex; gap:2rem; list-style:none;}
 .nav-link {
-    font-family: var(--mono);
+    font-family: var(--display);
     font-size: 0.8rem;
     color: var(--text-dim); 
-    transition: color 0.5s ease;
+    transition: color 0.8s ease;
 }
 .nav-link:hover {
     color: var(--red);
@@ -97,28 +97,23 @@ body{
     flex: 1;
     max-width: 560px;
 }
-.banner-tag{
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--green);
-    letter-spacing: 0.2em;
-    margin-bottom: 1.5rem;
-  }
 .banner-title{
     font-family: var(--display);
     font-size: clamp(2.8rem, 7vw, 5.5rem);
     font-weight: 900;
     line-height: 1;
-    color: #fff;
+    color: rgb(255, 255, 255);
     margin-bottom: 1.5rem;
   }
 .title-accent{
     color: var(--green);
-    text-shadow: 0 0 30px rgba(0,255,136,0.6), 0 0 60px rgba(0, 255, 136, 0.3);
+}
+.title-accent2{
+    color: red;
 }
 .banner-desc{
     font-size: 1.05rem;
-    color: var(--dim);
+    color: var(--text);
     margin-bottom: 2.5rem;
     line-height: 1.7;
   }
@@ -133,10 +128,10 @@ body{
     font-size: 0.75rem;
     letter-spacing: .08em;
     text-transform: uppercase;
-    font-family:fantasy;
+    font-family: var(--mono);
 }
 
-/* TERMINAL WIDGET */
+/* Terminal animation on banner */
 .banner-terminal{
     position:relative;
     z-index:1;
@@ -145,7 +140,6 @@ body{
     border:1px solid var(--border);
     border-radius:10px;
     overflow:hidden;
-    box-shadow:var(--glow), 0 20px 60px rgba(0,0,0,0.5);
 }
 .terminal-bar{
     display:flex;
@@ -165,8 +159,8 @@ body{
 .t-dot.green {background: #28c840;}
 .t-title{
     font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--dim);
+    font-size: 0.6rem;
+    color: red;
     margin-left: 0.5rem;
 }
 .terminal-body{
@@ -175,13 +169,13 @@ body{
 }
 .t-line{
     font-family: var(--mono);
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--green);
     line-height: 1.8;
 }
-.t-prompt{color:var(--dim); margin-right:0.5rem;}
+.t-prompt{color:var(--text); margin-right:0.5rem;}
 .t-cursor{animation: blink 1s infinite;}
-.t-out {color: var(--dim); padding-left: 1rem;}
+.t-out {color: var(--text); padding-left: 1rem;}
 
 /* All buttons */
 .btn{
@@ -195,7 +189,7 @@ body{
     border-radius: 4px;
     border:none;
     cursor:pointer;
-    transition: all 0.3s;
+    transition: all 0.8s;
 }
 .btn-primary{
     background: var(--green);
@@ -203,9 +197,7 @@ body{
     font-weight: 700;
 }
 .btn-primary:hover{
-    background: #fff;
-    box-shadow: var(--glow);
-    transform: translateY(-2px);
+    background: #22ff00;
 }
 .btn-ghost{
     background: transparent;
@@ -213,8 +205,9 @@ body{
     border: 1px solid var(--green);
 }
 .btn-ghost:hover{
-    background: rgba(0,255,136,0,0.08);
-    transform: translateY(-2px);
+border-color: #ef0808;
+color:#ef0808;
+transition: all 0.8s;
 }
 .btn-sm{
     padding: 0.5rem 1rem;
@@ -249,7 +242,7 @@ body{
     margin-bottom: 0.75rem;
     font-weight:900;
 }
-.section-sub{color: var(--dim); font-size: 1rem;}
+.section-sub{color: var(--text); font-size: 1rem;}
 
 /* lesson cards */
 .lesson-grid{
@@ -268,12 +261,12 @@ body{
     cursor:pointer;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-.lesson-card:hover{border-color:rgba(0, 255, 136, 0.4); box-shadow: var(--glow);}
-.lesson-card.open{border-color: rgba(0, 255, 136, 0.515);}
+.lesson-card:hover{border-color:rgba(0, 255, 136, 0.4);}
+.lesson-card.open{border-color: rgba(209, 6, 6, 0.948);}
 .lesson-head{
     display: flex;
     align-items: center;
-    gap: 1.3rem;
+    gap: 1.5rem;
     padding: 1.25rem 1.5rem;
     cursor: pointer;
     user-select: none;
@@ -320,9 +313,9 @@ body{
 }
 .example-label {
     font-family: var(--mono); 
-    font-size: 0.65rem; 
-    color: var(--dim); 
-    letter-spacing: 0.15em; 
+    font-size: 0.7rem; 
+    color: var(--text); 
+    letter-spacing: 0.2em; 
     margin-bottom: 1rem;
 }
 /* CAESAR CIPHER */ 
@@ -340,7 +333,7 @@ body{
 .cipher-label{
     font-family: var(--mono); 
     font-size: 0.7rem; 
-    color: var(--dim); 
+    color: var(--text); 
     min-width: 75px;
 }
 .cipher-text{
@@ -365,7 +358,7 @@ body{
 .email-field{
     font-family: var(--mono); 
     font-size: 1rem; 
-    color: var(--dim);
+    color: var(--text);
      margin-bottom: 0.4rem;
 }
 .email-body{
@@ -480,7 +473,7 @@ body{
     padding: 0.5rem 0.75rem; 
     border-radius: 4px; 
     background:rgba(0,0,0,0.3); 
-    color: var(--dim);
+    color: var(--text);
 }
 .sql-result.danger{
     background: rgba(255,68,102,0.1); 
@@ -516,7 +509,7 @@ body{
 .fact{
     font-family: var(--mono); 
     font-size:0.9rem; 
-    color:var(--dim); 
+    color:var(--text); 
     padding: 0.5rem 0.75rem; 
     background: rgba(0,0,0,0.2); 
     border-left: 2px solid var(--green-dim); 
@@ -537,11 +530,10 @@ body{
     border:1px solid var(--border); 
     border-radius:12px; 
     padding:2rem; 
-    transition:box-shadow 0.2s, border-color 0.2s; 
+    transition:border-color 0.5s;
 }
 .tool-card:hover{
-     box-shadow:var(--glow); 
-     border-color:rgba(0,255,136,0.3); 
+border-color:rgba(0,255,136,0.3); 
 }
 .tool-header{ 
     display:flex; 
@@ -563,7 +555,7 @@ body{
 .tool-sub{ 
     font-family:var(--mono); 
     font-size:0.9rem; 
-    color:var(--dim); 
+    color:var(--text); 
 }
 .tool-input{ 
     width:100%; 
@@ -580,11 +572,10 @@ body{
 }
 .tool-input:focus{ 
     border-color:var(--green); 
-    box-shadow:var(--glow); 
 }
 .tool-input::placeholder{ 
-    color:var(--dim); 
-    opacity:0.6; 
+    color:var(--text); 
+    opacity:0.5; 
 }
 
 /* PASSWORD CHECKER INTERACTIVE */
@@ -640,7 +631,7 @@ body{
 .hash-box-label{ 
     font-family:var(--mono); 
     font-size:1.2rem; 
-    color:var(--dim); 
+    color:var(--text); 
     letter-spacing:0.15em; 
     margin-bottom:0.6rem; 
 }
@@ -655,7 +646,7 @@ body{
 .hash-tip{
     font-family:var(--mono); 
     font-size:0.9rem; 
-    color:var(--dim); 
+    color:var(--text); 
     padding:0.6rem 0.875rem; 
     background:rgba(0,0,0,0.2); 
     border-left:2px solid var(--yellow); 
@@ -678,7 +669,6 @@ body{
     border-radius: 20px;
     backdrop-filter: blur(12px);
     padding: 2rem;
-    box-shadow: 0 0 100px rgba(0,255,136,0.08);
 }
 .quiz-top
 {
@@ -737,7 +727,6 @@ body{
     border: 1px solid rgba(0,255,136,.18);
     color: #00ff88;
     font-weight: 700;
-    box-shadow: 0 0 10px rgba(0,255,136,.12);
 }
 .accent{color: var(--green);}
 .quiz-question
@@ -854,8 +843,8 @@ body{
     margin-bottom: 0.5rem;
 }
 .end-msg{
-    font-size: 1.2rem;
-    color: var(--dim);
+    font-size: 1.4rem;
+    color: var(--text);
     margin-bottom: 2rem;
     line-height: 1.7;
 }

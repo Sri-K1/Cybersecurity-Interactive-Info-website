@@ -362,19 +362,14 @@ function finishQuiz() {
   const percent = Math.round((quizScore / quizQuestions.length) * 100);
   document.getElementById("endScore").textContent =
   `Your Score: ${quizScore} / ${quizQuestions.length} (${percent}%)`;
-  let icon = "🎓";
   let msg = "Great work!";
   if (percent >= 90) {
-    icon = "🏆";
-    msg = "Cybersecurity EXPERT!! You've mastered the essentials of Cybersecurity!";
+    msg = " Future Cybersecurity EXPERT!! You've mastered the essentials of Cybersecurity!";
   } else if (percent >= 70) {
-    icon = "🛡️";
-    msg = "Solid cybersecurity knowledge! Keep Going!";
+    msg = "Solid cybersecurity knowledge! Keep Learning!";
   } else if (percent >= 60) {
-    icon = "💻";
     msg = "Decent foundation, you still need to learn!";
   } else {
-    icon = "📚";
     msg = "Keep practicing and learning! You'll improve with more studying!";
   }
   document.getElementById("endIcon").textContent = icon;
