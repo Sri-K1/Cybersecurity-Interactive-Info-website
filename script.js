@@ -278,10 +278,10 @@ const quizQuestions = [
     explanation: "P@ssw0rd!X9 is the strongest because it includes uppercase, lowercase, numbers, and special characters."
   },
   {
-    question: "What does Hashing do?",
-    options: ["Encrypts","Compresses","Creates fixed fingerprints", "stores data in random numbers"],
-    answer: 2,
-    explanation: "Hashing creates a one-way fingerprint"
+    question: "Which is an example of an encryption method",
+    options: ["HAHA-256", "BRO-256", "CyberHash-256", "SHA-256"],
+    answer: 3,
+    explanation: "SHA-256 is a common example of a cryptographic hashing algorithm used in Cybersecurity."
   },
   {
     question: "Which port commonly uses HTTPS?",
@@ -293,16 +293,16 @@ const quizQuestions = [
     question:"AES is an example of: ",
     options: ["Encryption", "Firewall", "Virus", "Phishing"],
     answer: 0,
-    explanation: "AES is a modern high security encryption standard"
+    explanation: "AES is a modern high security encryption standard in the Cyber World."
   },
   {
-    question:"What is social engineering?",
-    options: ["Programming", "Manipulating people", "Encryption", "Scanning"],
+    question:"What exactly is Phishing?",
+    options: ["A type of malware", "A malicious technique", "A cyberattack where criminals impersonate a trusted person or organization to trick you into clicking malicious links", "A method criminals use to hack your computer"],
     answer: 1,
     explanation: "Social engineering is when Attackers exploit human psychology/behavior to gain access to confidential information from users."
   },
   {
-    question:"Which is the safest option?",
+    question:"What should you do to be safe online?",
     options: ["Clicking unknown links", "Reusing passwords", "Ignoring software updates", "Using Multifactor Authentication (MFA)"],
     answer: 3,
     explanation: "Using Multifactor Authentication (MFA) adds an extra layer of security to your accounts, making it harder for attackers to hack your account."
