@@ -20,9 +20,6 @@
             <li><a href="#tools" class="nav-link">Fun tools</a></li>
             <li><a href="#quiz" class="nav-link">Quiz</a></li>    
         </ul>
-        <div class="nav-status">
-            <span class="status-dot"></span>SECURE
-        </div>
        </nav>
        <!-- Banner-->
        <section class="banner" id="home">
@@ -67,6 +64,7 @@
     <div class="section-header">
         <div class="section-tag">Cyber Lessons</div>
         <h2 class="section-title">Learn the Basics</h2>
+        <h3 class="section-help">Click a lesson to learn more</h3>
     </div>
 
     <div class="lesson-grid">
@@ -76,7 +74,7 @@
           <div class="lesson-head">
                 <div>
                 <div class="lesson-num">01</div>
-                <div class="lesson-title">ENCRYPTION</div>
+                <div class="lesson-title">Encryption</div>
              </div>
             </div>
              <div class="lesson-body">
@@ -108,12 +106,10 @@
          </div>
          <div class="lesson-card" id="card-phishing">
             <div class="lesson-head" onclick="toggleLesson('card-phishing')">
-              <div class="lesson-icon">🎣</div>
               <div>
                 <div class="lesson-num">02</div>
-                <div class="lesson-title">PHISHING</div>  
+                <div class="lesson-title">Phishing</div>  
               </div>
-              <div class="lesson-arrow">▼</div>
             </div>  
             <div class="lesson-body">
                 <p>Phishing is when an attacker impersonates trusted organisations to trick you into giving up passwords, credit card info, and personal information</p>
@@ -125,8 +121,8 @@
                             <div class="email-field"><span>Subject:</span> <span id="phishSubject"></span></div>
                             <div class="email-body" id="phishBody"></div>
                             <div class="phish-btns">
-                              <button class="btn btn-sm btn-danger" onclick="judgePhish(event, true)">🎣 PHISHING</button>
-                              <button class="btn btn-sm btn-safe" onclick="judgePhish(event, false)">✅ LEGIT</button>
+                              <button class="btn btn-sm btn-danger" onclick="judgePhish(event, true)">Phishing!!</button>
+                              <button class="btn btn-sm btn-safe" onclick="judgePhish(event, false)">LEGIT!</button>
                             </div>
                             <div class="phish-result" id="phishResult"></div>
                         </div> 
@@ -144,28 +140,26 @@
                   
                       <div class="lesson-card" id="card-firewalls">
                     <div class="lesson-head" onclick="toggleLesson('card-firewalls')">
-                      <div class="lesson-icon">🔥</div>
                       <div>
                         <div class="lesson-num">03</div>
-                        <div class="lesson-title">FIREWALLS</div>
+                        <div class="lesson-title">Firewalls</div>
                       </div>
-                      <div class="lesson-arrow">▼</div>
                     </div>
                   <div class="lesson-body">
                     <p>A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules — like a bouncer for your network </p>  
                     <div class="lesson-example">
-                        <div class="example-label">// FIREWALL RULES SIMULATON</div>
+                        <div class="example-label">Firewalls Rules Simulation</div>
                         <div class="firewall-demo">
                             <div class="fw-rules">
-                                <div class="fw-rule allow">ALLOW - PORT 443 (HTTPS)</div>
-                                <div class="fw-rule allow">ALLOW - PORT 80 (HTTP)</div>
-                                <div class="fw-rule allow">DENY - PORT 22 (SSH from external)</div>
-                                <div class="fw-rule allow">DENY - PORT 3389 (RDP)</div>
-                                <div class="fw-rule allow">ALLOW - PORT 25 (SMTP)</div>
+                              <div class="fw-rule allow">ALLOW - PORT 443 (HTTPS)</div>
+                              <div class="fw-rule allow">ALLOW - PORT 80 (HTTP)</div>
+                              <div class="fw-rule allow">DENY - PORT 22 (SSH from external)</div>
+                              <div class="fw-rule allow">DENY - PORT 3389 (RDP)</div>
+                              <div class="fw-rule allow">ALLOW - PORT 25 (SMTP)</div>
                             </div>
                             <div class="fw-test">
                               <input type="number" class="fw-input" id="fwPort" placeholder="Test a port number e.g. 443" min="1" max="65535" onclick="stopBubble(event)" oninput="stopBubble(event)" onkeydown="if(event.key === 'Enter') {testFirewall(event);}"/>
-                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">TEST</button>
+                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">Test</button>
                              </div>
                              <div class="fw-result" id="fw-result"></div>
                         </div>
@@ -179,12 +173,10 @@
             
             <div class="lesson-card" id="card-sql">
                 <div class="lesson-head" onclick="toggleLesson('card-sql')">
-                    <div class="lesson-icon">💉</div>
                 <div>
                     <div class="lesson-num">04</div>
-                    <div class="lesson-title">SQL INJECTION</div>
+                    <div class="lesson-title">SQL Injection</div>
                 </div> 
-                <div class="lesson-arrow">▼</div>
               </div>
               <div class="lesson-body">
                 <p>SQL Injection is when an attacker inserts malicious SQL code into an input field, tricking a database into revealing or deleting data</p>  
@@ -223,15 +215,13 @@
           <section class="section section-dark" id="tools">
             <div class="section-header">
               <div class="section-tag">Cyber Tools</div>
-              <h2 class="section-title">INTERACTIVE TOOLS</h2>
-              <p class="section-sub">Hands-on demos to gain more understanding on these concepts</p>
+              <h2 class="section-title">Interactive Tools u can try out!</h2>
             </div>
             <div class="tools-grid">
               <div class="tool-card">
                 <div class="tool-header">
-                  <span class="tool-icon">🔑</span>
                   <div>
-                    <div class="tool-title">PASSWORD STRENGTH</div>
+                    <div class="tool-title">Password Strength Checker</div>
                     <div class="tool-sub">See how strong your password really is</div>
                   </div>
                 </div>
@@ -242,10 +232,7 @@
                 id="pwInput"
                 placeholder="Type a password..."
                 oninput="checkPassword()">
-                <button
-                 class="pw-toggle"
-                onclick="togglePassword()">👀
-              </button>
+                <button class="pw-toggle" onclick="togglePassword()">*See/Hide*</button>
               </div>
                 <div class="pw-strength-row">
                   <div class="pw-bar-wrap"><div class="pw-bar" id="pwBar"></div></div>
@@ -255,7 +242,6 @@
               </div>
               <div class="tool-card">
                 <div class="tool-header">
-                  <span class="tool-icon">🔢</span>
                   <div>
                     <div class="tool-title">Hashing</div>
                     <div class="tool-sub">One-way fingerprints are basically impossible to reverse</div>
@@ -300,11 +286,10 @@
                 <button class="btn btn-primary" id="quizNext" onclick="nextQuiz()">Next Question</button>
                 </div>
                 <div class="quiz-end hidden" id="quizEnd">
-                <div class="end-icon" id="endIcon"></div>
-                <div class="end-title">MISSION COMPLETE</div>
+                <div class="end-title">Misson Successful!</div>
                 <div class="end-score" id="endScore"></div>
                 <div class="end-msg" id="endMsg"></div>
-                <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN</button>
+                <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN...</button>
               </div>
             </div>
           </section>

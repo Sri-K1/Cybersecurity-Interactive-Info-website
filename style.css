@@ -1,8 +1,11 @@
 :root {
  --bg:  #3a3b3c51;
- --border: rgba(0, 255, 136, 0.523); 
+  --bg2: #1f272ed1;
+  --panel: #2a3845;
+ --border: rgba(0, 255, 136, 0.75); 
  --green: #00ff88;
- --green-dim: #00cc6a;
+ --green-dim: #00cc699e;
+ --amber: #ffb000;
  --red: #ff4466;
  --yellow: #ffd700;
  --blue: #00aaff;
@@ -10,21 +13,19 @@
 --dark-text: #6e7681; 
 --mono: 'Share Tech', monospace; 
 --display: 'Orbitron', sans-serif;
+
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0;}
 html {scroll-behavior: smooth;}
 body{
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body-font);
-    font-size: 1rem;
-    line-height: 1.6;
-    overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0f0f39, #283b51 70%, #090a0f);
+  overflow: auto;
 }
-::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar {width: 8px;}
 ::-webkit-scrollbar-track {background: var(--bg);}
-::-webkit-scrollbar-thumb {background: var(--green); border-radius: 2px;}
+::-webkit-scrollbar-thumb {background: var(--green); border-radius: 8px;}
 
 /* nav */
 .navbar {
@@ -39,6 +40,7 @@ body{
     background: rgba(8, 12, 16, 0.92);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
+    color:#ffff;
 }
 
 .nav-logo {
@@ -56,20 +58,10 @@ body{
     font-family: var(--mono);
     font-size: 0.8rem;
     color: var(--text-dim); 
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 .nav-link:hover {
     color: var(--red);
-}
-.nav-link.active {color:var(-green);}
-.nav-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    color: var(--green);
-    letter-spacing: 0.15em;
 }
 /*  Banner (Hero) - I just called it banner instead of hero :) */
 .banner{
@@ -86,10 +78,6 @@ body{
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background-image:
-      linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
 }
 .banner-grid::after{
     content: '';
@@ -195,7 +183,7 @@ body{
 .t-cursor{animation: blink 1s infinite;}
 .t-out {color: var(--dim); padding-left: 1rem;}
 
-/* BUTTONS */
+/* All buttons */
 .btn{
     display:inline-flex;
     align-items: center;
@@ -243,7 +231,7 @@ body{
 .btn-safe:hover{
     opacity:0.85;
 }
-/* SECTIONS */
+/* sections */
 .section{ padding: 6rem 2.5rem;}
 .section-dark{background: var(--bg2);}
 .section-header{text-align:center; margin-bottom:3.5rem;}
@@ -263,7 +251,7 @@ body{
 }
 .section-sub{color: var(--dim); font-size: 1rem;}
 
-/* LESSON CARDS */
+/* lesson cards */
 .lesson-grid{
     max-width: 900px; 
     margin: 0 auto; 
@@ -877,6 +865,7 @@ body{
     border-top: 1px solid var(--border);
     padding: 2rem 2.5rem;
     background: var(--bg2);
+    color: var(--text);
 }
 .footer-inner{
     max-width: 900px;
@@ -895,20 +884,20 @@ body{
 .footer-text{
     font-family: var(--mono);
     font-size: 0.75rem;
-    color: var(--dim);
+    color: var(--text);
 }
 .footer-links{
     display: flex;
     gap: 1.5rem;
+    color: var(--text)
 }
 .footer-links a{
     font-family: var(--mono);
-    font-size: 0.9rem;
-    color: var(--dim);
-    transition: color 0.2s;
-    text-decoration: none;
+    font-size: 1rem;
+    color: var(--text);
+    transition: color 0.5s;
 }
-.footer-links a:hover{color: var(--green);}
+.footer-links a:hover{color: var(--red);}
 
 /* Mobile Compatability */
 @media (max-width: 768px) {
