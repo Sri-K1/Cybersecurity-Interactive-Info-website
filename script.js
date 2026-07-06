@@ -228,7 +228,9 @@ function checkPassword()
 function togglePassword() // new function to toggle password visibility for the password interactive 
 {
   const input = document.getElementById("pwInput");
+  const button = document.getElementById("pwToggleBtn");
   input.type = input.type === "password" ? "text" : "password";
+  button.textContent = input.type === "password" ? "Show" : "Hide";
 }
 
 /* SHA-256 Hashing Interactive */
