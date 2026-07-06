@@ -975,6 +975,8 @@ transition: all 0.8s;
         flex-direction: column;
         text-align: center;
     }
+    .title-accent{margin-left: 0.6em;}
+    .title-accent2{margin-left: 1.2em;}
 }
 .hidden
 {
