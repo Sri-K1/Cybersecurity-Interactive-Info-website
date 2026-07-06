@@ -269,9 +269,9 @@ const quizQuestions = [
   },
   {
     question:"What does SQL Injection target?",
-    options: ["Printers", "Databases", "Websites", "Routers"],
+    options: ["Printers", "Websites and Backend Databases", "Phones", "Routers"],
     answer: 1,
-    explanation: "SQL Injection is a code injection technique that targets databases by inserting malicious SQL statements."
+    explanation: "SQL Injection is a code injection technique that targets web apps and their backend databases by inserting malicious SQL statements."
   },
   {
     question:"Which password is the strongest?",
@@ -300,7 +300,7 @@ const quizQuestions = [
   {
     question:"What exactly is Phishing?",
     options: ["A type of malware", "A malicious technique", "A cyberattack where criminals impersonate a trusted person or organization to trick you into clicking malicious links", "A method criminals use to hack your computer"],
-    answer: 1,
+    answer: 2,
     explanation: "Social engineering is when Attackers exploit human psychology/behavior to gain access to confidential information from users."
   },
   {

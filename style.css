@@ -173,7 +173,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     width: 120px;
     height: auto;
     z-index:2;
-    pointer-events: none;
 }
 .green-lock
 {
@@ -183,7 +182,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     width: 120px;
     height:auto;
     z-index:2;
-    pointer-events: none;
 }
 .cyber-lock{
     position: absolute;
@@ -194,6 +192,20 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     z-index:2;
     pointer-events: none;
 }
+.learn-img{
+    position:absolute;
+    right: 350px;
+    top: 780px;
+    height: auto;
+    width:100px;
+}
+.tools-img{
+    position:absolute;
+    right: 670px;
+    top:1610px;
+    height:auto;
+    width:80px;
+}
 .hero-title-image
 {
     position: absolute;
@@ -201,6 +213,26 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     top:160px;
     height:auto;
     width: 130px;
+}.hero-title-image:hover{
+    transform: translateY(-5px);
+   transition: ease-in-out all 0.6s;
+}
+.green-globe:hover{
+    transform: translateY(-5px);
+   transition: ease-in-out all 0.6s;
+}
+.green-lock:hover{
+    transform: translateY(-5px);
+   transition: ease-in-out all 0.6s;
+}
+.learn-img:hover
+{
+    transform: translateY(-5px);
+    transition:ease-in-out 0.8s;
+}
+.tools-img:hover{
+    transform: translateY(-5px);
+    transition:ease-in 0.8s;
 }
 .terminal-bar{
     display:flex;
@@ -304,7 +336,7 @@ transition: all 0.8s;
     margin-bottom: 0.75rem;
     font-weight:900;
 }
-.section-sub{color: var(--green); font-size: 1rem;}
+.section-sub{color: var(--green); font-size: 1.5rem; font-family: var(--desc);}
 /* lesson cards */
 .lesson-grid{
     max-width: 900px; 
@@ -350,6 +382,8 @@ transition: all 0.8s;
     display:none; 
     padding: 0 1.5rem 1.5rem; 
     border-top: 2px solid var(--green-dim);
+    color: white;
+    font-family: var(--mono);
 }
 .lesson-card.open .lesson-body{display:block;}
 .lesson-body>p {
@@ -741,8 +775,9 @@ transition: all 0.8s;
 }
 .quiz-card{
     padding: 2.5rem;
-    background:rgba(20,25,35,.85);
-    border: 1px solid rgba(0,255,136,.15);
+    background: #000000;
+    background: linear-gradient(152deg, rgba(0, 0, 0, 1) 47%, rgba(5, 110, 0, 1) 96%);
+    border: 1px solid rgba(255, 174, 0, 0.672);
     border-radius: 20px;
     backdrop-filter: blur(12px);
 }
@@ -833,8 +868,10 @@ transition: all 0.8s;
     gap:12px;
 }
 .quiz-option:hover{
-    transform: scale(1.02);
+    transform: translateY(-5px);
     border-color:#a42e2e;
+    border-width: 3px;
+    transition: all 0.5s;
 }
 .quiz-opt:disabled{cursor: default;}
 .quiz-opt.correct
@@ -867,7 +904,7 @@ transition: all 0.8s;
 {
     font-family: var(--mono); 
     font-size: 0.9rem; 
-    line-height: 1.6; 
+    line-height: 1.5; 
     padding: 14px 18px; 
     border-radius: 12px; 
     display: none; 
@@ -878,27 +915,22 @@ transition: all 0.8s;
 .quiz-feedback.correct-fb{
     background: rgba(0,255,136,0.07); 
     color: var(--green);
-    border: 1px solid rgba(0,255,136,0.2)
+    border: 1px solid rgba(0, 255, 136, 0.721)
 }
 .quiz-feedback.wrong-fb{
     background: rgba(255,68,102,0.07); 
     color: var(--red);
-    border: 1px solid rgba(255,68,102,0.2);
+    border: 1px solid rgba(234, 17, 17, 0.772);
 }
 
-/* QUIZ END SCREEN */
+/* Quiz end */
 .quiz-end
 {
-    background: var(--panel);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 3rem 2rem;
     text-align: center;
-}
-.end-icon
-{
-    font-size: 3.3rem;
-    margin-bottom: 1rem;
 }
 .end-title
 {
@@ -906,20 +938,20 @@ transition: all 0.8s;
     font-size: 1.5rem;
     color: #fff;
     margin-bottom: 0.5rem;
-    font-weight: 900;
+    font-weight: 600;
 }
 .end-score
 {
-    font-family: var(--mono);
+    font-family: var(--desc);
     font-size: 2.5rem;
     color: var(--green);
     margin-bottom: 0.5rem;
 }
 .end-msg{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--text);
     margin-bottom: 2rem;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 /* Footer styles */
