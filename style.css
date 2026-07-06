@@ -962,6 +962,11 @@ transition: all 0.8s;
         flex:none;
         width: 100%;
     }
+    .banner-title{font-size: 50px;}
+    .banner-desc{font-size: 30px;}
+    .banner-btns{gap: 0.5em; display: flex; flex-wrap: wrap;}
+    .green-globe{display: none;}
+    .green-lock{display: none;}
     .nav-links{
     display:none;
     }
@@ -975,8 +980,8 @@ transition: all 0.8s;
         flex-direction: column;
         text-align: center;
     }
-    .title-accent{margin-left: 0.6em;}
-    .title-accent2{margin-left: 1.2em;}
+    .title-accent{margin-left: 0.6em; font-size: 50px;}
+    .title-accent2{margin-left: 1.2em; font-size: 50px;}
 }
 .hidden
 {
