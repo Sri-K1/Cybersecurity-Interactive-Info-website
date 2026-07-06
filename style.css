@@ -111,6 +111,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     max-width: 560px;
 }
 .banner-title{
+    position: relative;
     font-family: var(--display);
     font-size: 90px;
     font-weight: 600;
@@ -192,6 +193,14 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     height: auto;
     z-index:2;
     pointer-events: none;
+}
+.hero-title-image
+{
+    position: absolute;
+    left:0;
+    top:160px;
+    height:auto;
+    width: 130px;
 }
 .terminal-bar{
     display:flex;
@@ -962,11 +971,12 @@ transition: all 0.8s;
         flex:none;
         width: 100%;
     }
-    .banner-title{font-size: 50px;}
-    .banner-desc{font-size: 30px;}
+    .banner-title{font-size: 60px;}
+    .banner-desc{font-size: 20px;}
     .banner-btns{gap: 0.5em; display: flex; flex-wrap: wrap;}
     .green-globe{display: none;}
     .green-lock{display: none;}
+    .hero-title-image{display: none;}
     .nav-links{
     display:none;
     }
