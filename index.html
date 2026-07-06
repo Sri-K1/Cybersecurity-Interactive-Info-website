@@ -76,29 +76,29 @@
     <div class="lesson-grid">
 
 
-      <div class="lesson-card" onclick="toggleLesson(this)">
-          <div class="lesson-head">
+      <div class="lesson-card" id="encryption-card">
+          <div class="lesson-head" onclick="toggleLesson('encryption-card')">
                 <div>
                 <div class="lesson-num">01</div>
                 <div class="lesson-title">Encryption</div>
              </div>
             </div>
-             <div class="lesson-body">
+            <div class="lesson-body">
             <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
                 <div class="lesson-example">
                     <div class="example-label"> Example: Caesar Cipher</div> 
                     <div class="cipher-demo">
                         <div class="cipher-row">
-                          <span class="cipher-label">Plain:</span>
-                          <span class="cipher-text" id="plain-text">Hey friend</span> 
-                      </div>
+                        <span class="cipher-label">Plain (Type here):</span>
+                           <input type="text" class="cipher-input tool-input" id="plain-text" value="HELLO WORLD" oninput="updateCipher(event)" onclick="stopBubble(event)" style="flex: 1; max-width: 160px;" />
+                        </div>
                           <div class="cipher-row">
-                            <span class="cipher-label">Shift:</span>
+                            <span class="cipher-label">Shift (Use slider):</span>
                             <input type="range" min="1" max="25" value="3" class="cipher-slider" id="cipher-shift" oninput="updateCipher(event)" onclick="stopBubble(event)" />
                             <span class="cipher-num" id="shift-num">3</span>
                         </div>
                         <div class="cipher-row">
-                            <span class="cipher-label">Encrypted</span>
+                            <span class="cipher-label">Encrypted (Result)</span>
                             <span class="cipher-text accent" id="cipher-output">KHOOR ZRUOG</span>
                         </div>
                     </div>

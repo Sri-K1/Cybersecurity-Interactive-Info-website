@@ -62,8 +62,9 @@ let charIndex = 0;
     {
       e.stopPropagation();
       const shift = Number(document.getElementById("cipher-shift").value);
+      const plainText = document.getElementById("plain-text").value.toUpperCase();
       document.getElementById("shift-num").textContent = shift;
-      document.getElementById("cipher-output").textContent = caesarCipher("HELLO WORLD", shift);
+      document.getElementById("cipher-output").textContent = caesarCipher(plainText, shift);
     }
 
     /* Phishing Simulator */
@@ -119,6 +120,7 @@ let charIndex = 0;
       const email = phishingEmails[currentEmail];
       const result = document.getElementById("phishResult");
       result.classList.add("show");
+      result.classList.remove("correct","incorrect"); // fixed a bug where changing the answer to correct answer will not update the colors
       if(answer === email.phish)
       {
         result.textContent = "Correct Answer! Good catch"
