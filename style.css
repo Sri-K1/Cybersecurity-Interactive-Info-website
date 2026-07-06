@@ -199,13 +199,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     height: auto;
     width:100px;
 }
-.tools-img{
-    position:absolute;
-    right: 670px;
-    top:1610px;
-    height:auto;
-    width:80px;
-}
 .hero-title-image
 {
     position: absolute;
@@ -229,10 +222,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 {
     transform: translateY(-5px);
     transition:ease-in-out 0.8s;
-}
-.tools-img:hover{
-    transform: translateY(-5px);
-    transition:ease-in 0.8s;
 }
 .terminal-bar{
     display:flex;
