@@ -941,6 +941,7 @@ transition: all 0.8s;
     color: var(--text);
     margin-bottom: 2rem;
     line-height: 1.5;
+    font-family: var(--desc);
 }
 
 /* Footer styles */

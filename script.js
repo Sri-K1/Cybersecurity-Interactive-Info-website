@@ -376,7 +376,6 @@ function finishQuiz() {
   } else {
     msg = "Keep practicing and learning! You'll improve with more studying!";
   }
-  document.getElementById("endIcon").textContent = icon;
   document.getElementById("endMsg").textContent = msg;
 }
 function restartQuiz() {
