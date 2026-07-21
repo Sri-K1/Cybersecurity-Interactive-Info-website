@@ -15,6 +15,12 @@ This is a fun website where users can interact with cool tools related to cybers
 Just click on this link below, scroll through the website and click on the lesson cards to learn more! Also this website is optimized for laptops, it can still run on mobile but will have slight issues.
 Link: https://cybersecurity-interactive-and-info.vercel.app/ 
 
+# Local setup Instructions:
+- 1) Download all files from this github repository
+- 2) Open all files using a file editor (VS Code recommended)
+- 3) Install "Live Server" VS Code extension
+- 4) After installation, Click "Go Live" button on the bottom right hand of the code editor window to run this locally 
+
 # Background:
 
 My main reason for making a website based on cybersecurity is that I have a passion in cybersecurity and will be pursuing it in college. I think that Cybersecurity is really interesting and cool especially for people who like problem solving, hacking, and such. I also have decent/mid level experience with html and css so I wanted to build my first website and I never built something this complex before.
