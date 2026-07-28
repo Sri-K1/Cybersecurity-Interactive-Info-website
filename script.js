@@ -144,26 +144,6 @@ let charIndex = 0;
       loadPhish();
     }
 
-   /* Firewall Demo */ 
-   function testFirewall(e)
-   {
-    e.stopPropagation();
-    const port = Number(document.getElementById("fwPort").value);
-    const result = document.getElementById("fw-result");
-    const allowed = [80,443,25];
-    result.classList.remove("allow", "deny");
-    if(allowed.includes(port))
-    {
-      result.textContent = `ACCESS ALLOWED TO PORT ${port}`;
-      result.classList.add("allow");
-    }
-    else{
-      result.textContent = `BLOCKED TO PORT ${port}`;
-      result.classList.add("deny");
-    }
-    result.classList.add("show"); 
-   }
-
 /*SQL Injection*/
 function checkSQL() 
 {

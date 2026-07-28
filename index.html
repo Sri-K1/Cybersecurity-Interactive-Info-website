@@ -2,7 +2,7 @@
 <head>
 <meta charset = "UTF-8" />
 <meta name = "viewport" content = "width = device-width, initial-scale=1.0" />
-<title>Cyberlearn </title>
+<title>CyberMaster </title>
 <link rel="stylesheet" href="style.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +67,6 @@
 <!-- Cyber Lessons --> 
 <section class="section" id="lessons">
     <div class="section-header">
-        <div class="section-tag">Cyber Lessons</div>
         <h2 class="section-title">Learn the Basics</h2>
         <img src="Assets/learn.png" alt="" class="learn-img"/>
         <h3 class="section-help">Click a lesson to learn more</h3>
@@ -84,7 +83,7 @@
              </div>
             </div>
             <div class="lesson-body">
-            <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it</p>
+            <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it. Think of it like, when you text someone through messages, there is a background process that makes sure that no one else except you and the other person can read the message, not even the app provider company (whatsapp, apple, google, etc.) can read your messages.</p>
                 <div class="lesson-example">
                     <div class="example-label"> Example: Caesar Cipher</div> 
                     <div class="cipher-demo">
@@ -107,6 +106,7 @@
                     <div class="fact"> Modern encryption uses AES-256 — which would take billions of years to crack by brute force by a hacker who would try to hack in</div>
                     <div class="fact"> HTTPS uses TLS encryption to protect everything that you send online like messages or photos</div>
                     <div class="fact"> End-to-end encryption means that only you and the recipient can read your messages, not even app provider can see your messages</div>
+                    <div class="fact" > Caesar Cipher is now an obselete form of encryption in this modern tech world</div>
                  </div>
              </div>
          </div>
@@ -136,8 +136,8 @@
                     </div>  
                     <div class="lesson-facts">
                         <div class="fact"> 91% of all cyberattacks begin with a phishing email</div>
-                        <div class="fact"> Always hover over links before clicking - the real URL shows in the status bar</div>
                         <div class="fact"> Urgency is the #1 social engineering tactic, emails or messages may display such as "ACT NOW!" to make you fall in the trap</div>
+                        <div class="fact"> Phishing is very easy to trick people into giving up sensitive information</div>
                       </div>
                       
                       </div>
@@ -152,26 +152,11 @@
                       </div>
                     </div>
                   <div class="lesson-body">
-                    <p>A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules — like a bouncer for your network </p>  
+                    <p>A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules kind of like a bouncer for your network. This is a very necessary system required on any device because it serves a great purpose, Ex: Inspects data, Blocks threats,etc. </p>  
                     <div class="lesson-example">
-                        <div class="example-label">Firewalls Rules Simulation</div>
-                        <div class="firewall-demo">
-                            <div class="fw-rules">
-                              <div class="fw-rule allow">ALLOW - PORT 443 (HTTPS)</div>
-                              <div class="fw-rule allow">ALLOW - PORT 80 (HTTP)</div>
-                              <div class="fw-rule allow">DENY - PORT 22 (SSH from external)</div>
-                              <div class="fw-rule allow">DENY - PORT 3389 (RDP)</div>
-                              <div class="fw-rule allow">ALLOW - PORT 25 (SMTP)</div>
-                            </div>
-                            <div class="fw-test">
-                              <input type="number" class="fw-input" id="fwPort" placeholder="Test a port number e.g. 443" min="1" max="65535" onclick="stopBubble(event)" oninput="stopBubble(event)" onkeydown="if(event.key === 'Enter') {testFirewall(event);}"/>
-                                <button class="btn btn-primary btn-sm" onclick="testFirewall(event)">Test</button>
-                             </div>
-                             <div class="fw-result" id="fw-result"></div>
                         </div>
-                      </div>
                       <div class="lesson-facts">
-                        <div class="fact"> There are two types: Network firewalls (hardware) and Host-based firewalls (software)</div>
+                        <div class="fact"> There are two types of firewalls: Network firewalls (hardware) in your home or router, and Host-based firewalls (software), a program built directly into your computer or phone</div>
                         <div class="fact"> Next-gen firewalls (NGFW) can inspect the actual content of packets, not just ports</div>       
                     </div> 
                 </div>
@@ -208,8 +193,7 @@
                     </div>
                   </div>
                   <div class="lesson-facts">
-                    <div class="fact"> SQL injection is still the #1 web vulnerability</div>
-                    <div class="fact"> Defence: Always use parameterised queries / prepared statements</div>
+                    <div class="fact"> SQL injection is still the #1 web vulnerability used in the modern world</div>
                     <div class="fact"> The 2012 LinkedIn breach exposed 117M passwords via SQL injection</div>
                   </div>
                 </div>
@@ -220,7 +204,6 @@
           <!-- Tools e.g. pass checker, hashing --> 
           <section class="section section-dark" id="tools">
             <div class="section-header">
-              <div class="section-tag">Cyber Tools</div>
               <h2 class="section-title">Interactive Tools u can try out!</h2>
             </div>
             <div class="tools-grid">
@@ -266,7 +249,6 @@
           <!-- Quiz section -->
           <section class="section" id="quiz">
             <div class="section-header">
-              <div class="section-tag">Cyber Quiz</div>
               <h2 class="section-title">Let's test your Cybersecurity Knowledge</h2>
               <p class="section-sub">10 questions, No time limit, Use your Cyber knowledge</p>
             </div>
