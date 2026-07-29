@@ -19,16 +19,10 @@
         <div class="nav-left">
           <img src="Assets/cyber-lock.png" alt="" class="cyber-lock"/>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#lessons" class="nav-link">Cyber Lessons</a></li>
-            <li><a href="#tools" class="nav-link">Fun tools</a></li>
-            <li><a href="#quiz" class="nav-link">Quiz</a></li>    
-        </ul>
        </nav>
        <!-- Banner-->
-       <section class="banner" id="home">
-        
+       <section class="banner" id="home-screen">
+
         <div class="banner-content">
         <h1 class="banner-title">
           Learn
@@ -40,8 +34,7 @@
                 This is the place for you to start! Learn with CyberMasters!
             </p>
             <div class="banner-btns">
-                <a href="#lessons" class="btn btn-primary">Start Learning...</a>
-                <a href="#quiz" class="btn btn-ghost">Want to Take the Quiz?</a>
+                <button class="btn btn-primary" onclick="showScreen('lessons-screen')">Start Learning...</button>
             </div>
         </div>
         <div class="terminal-wrap"></div>
@@ -65,7 +58,7 @@
 </section>
 
 <!-- Cyber Lessons --> 
-<section class="section" id="lessons">
+<section class="section hidden" id="lessons-screen">
     <div class="section-header">
         <h2 class="section-title">Learn the Basics</h2>
         <img src="Assets/learn.png" alt="" class="learn-img"/>
@@ -199,10 +192,14 @@
                 </div>
               </div>
             </div>
+
+            <div class="screen-next">
+               <button class="btn btn-primary" onclick="showScreen('tools-screen')">Next </button>
+            </div>
           </section>
         
           <!-- Tools e.g. pass checker, hashing --> 
-          <section class="section section-dark" id="tools">
+          <section class="section section-dark hidden" id="tools-screen">
             <div class="section-header">
               <h2 class="section-title">Interactive Tools u can try out!</h2>
             </div>
@@ -244,10 +241,14 @@
                 <div class="hash-tip">Changing even ONE character — the entire hash would change completely</div>
               </div>
             </div>
+
+            <div class="screen-next">
+               <button class="btn btn-primary" onclick="showScreen('quiz-screen')">Quiz Time!!</button>
+            </div>
           </section>
 
           <!-- Quiz section -->
-          <section class="section" id="quiz">
+          <section class="section hidden" id="quiz-screen">
             <div class="section-header">
               <h2 class="section-title">Let's test your Cybersecurity Knowledge</h2>
               <p class="section-sub">10 questions, No time limit, Use your Cyber knowledge</p>
@@ -278,8 +279,16 @@
                 <div class="end-score" id="endScore"></div>
                 <div class="end-msg" id="endMsg"></div>
                 <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN...</button>
+                <button class="btn btn-ghost" onclick="showScreen('congrats-screen')">Return Home</button>
               </div>
             </div>
+          </section>
+
+          <!-- Congratulating user screen -->
+          <section class="section congrats-screen hidden" id="congrats-screen">
+            <!-- Yours to write. What do you actually want to say to someone who just finished this? -->
+            <h2 class="section-title">Congrats on finishing the course! I hope you enjoyed and got some valuable information from this website.</h2>
+            <button class="btn btn-primary" onclick="showScreen('home-screen')">Actually go home now!</button>
           </section>
         
           <!-- Footer -->
@@ -295,5 +304,4 @@
           </footer>
        <script src="script.js"></script>
         </body>
-      </html> 
-       
+      </html>

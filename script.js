@@ -1,4 +1,10 @@
-/* Lesson Cards */
+function showScreen(screenId) 
+{
+  document.querySelectorAll("#home-screen, #lessons-screen, #tools-screen, #quiz-screen, #congrats-screen").forEach(screen => screen.classList.add("hidden"));
+  document.getElementById(screenId).classList.remove("hidden");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
 function toggleLesson(card)
 {
   if (typeof card === "string")
