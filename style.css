@@ -16,6 +16,7 @@
 --mono: 'JetBrains Mono', 'Courier New', monospace;
 --display: 'VT323', monospace;
 --desc: var(--mono);
+--transition: 0.8s cubic-bezier(0.25,0.46,0.45,0.95);
 }
 a{
     text-decoration:none;
@@ -25,7 +26,8 @@ a{
 html{
   scroll-behavior: smooth;
   min-height: 100%;
-  background: #0d1117;
+background: #000000;
+background: linear-gradient(181deg, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 1) 52%, rgba(191, 10, 10, 1) 99%);
   overflow-x: hidden;
   overscroll-behavior: none;
 }
@@ -33,7 +35,6 @@ body
 {
   min-height:100vh;
   overscroll-behavior:none;
-  background: #0b0b0b;
 }
 
 .navbar {
@@ -112,7 +113,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     font-size: 90px;
 }
 .title-accent2{
-    color: var(--red-dim);
+    color: var(--red);
     display: block;
     margin-left: 2.4em;
     font-size: 90px
@@ -152,9 +153,26 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
   height:100vh;
   object-fit: cover;
   z-index:-1;
-  opacity: 0.3;
+  opacity: 0.5;
 }
-
+/* Screen transitions */
+.section {
+  opacity:1;
+  transform: translateY(0);
+  transition:all 1s cubic-bezier(0.25,0.46,0.45,0.95);
+}
+.screen-out 
+{
+  opacity:0 !important;
+    transform: translateY(0);
+  transition:all 1s cubic-bezier(0.25,0.46,0.45,0.95);
+}
+.screen-in-start 
+{
+  opacity:0 !important;
+    transform: translateY(0);
+  transition:all 1s cubic-bezier(0.25,0.46,0.45,0.95);
+}
 .banner-terminal{
     position:relative;
     z-index:1;
@@ -254,6 +272,8 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 }
 .btn-primary:hover{
     background: #22ff00;
+    transform: var(--transition), translateY(-1px);
+    border: 2px solid red;
 }
 .return-btn
 {
@@ -266,6 +286,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 .return-btn:hover{
 background: rgb(7, 225, 7);
 color:white ;
+transform: translateY(-1px);
 transition: all 0.8s;
 }
 .btn-sm{

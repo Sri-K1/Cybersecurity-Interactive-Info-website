@@ -6,9 +6,6 @@
 <link rel="stylesheet" href="style.css" />
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <body> 
-      <video class="bg-video" autoplay loop muted playsinline>
-        <source src="Assets/hackervid.mp4" type="video/mp4">
-      </video>
     <!-- navbar -->
     <nav class="navbar">
         <div class="nav-logo">
@@ -20,6 +17,9 @@
        </nav>
        <!-- Banner-->
        <section class="banner" id="home-screen">
+          <video class="bg-video" autoplay loop muted playsinline>
+            <source src="Assets/hackervid.mp4" type="video/mp4">
+          </video>
         <div class="banner-content">
         <h1 class="banner-title">
           Learn
@@ -55,6 +55,10 @@
 
 <!-- Cyber Lessons --> 
 <section class="section hidden" id="lessons-screen">
+  <section class="section hidden" id="lessons-screen">
+    <button class="btn-back" onclick="showScreen('home-screen')">Back</button>
+  <div class="section-header">
+
     <div class="section-header">
         <h2 class="section-title">Learn the Basics</h2>
         <h3 class="section-help">Click a lesson to learn more</h3>
@@ -193,6 +197,9 @@
         
           <!-- Tools e.g. pass checker, hashing --> 
           <section class="section section-dark hidden" id="tools-screen">
+            <section class="section section-dark hidden" id="tools-screen">
+              <button class="btn-back" onclick="showScreen('lessons-screen')">Back</button>
+            <div class="section-header">
             <div class="section-header">
               <h2 class="section-title">Interactive Tools u can try out!</h2>
             </div>
@@ -231,7 +238,7 @@
                   <div class="hash-box-label">SHA-256 Output</div>
                   <div class="hash-val" id="hashVal">—</div>
                 </div>
-                <div class="hash-tip">Changing even ONE character — the entire hash would change completely</div>
+                <div class="hash-tip">Changing even ONE character: the entire hash would change completely</div>
               </div>
             </div>
 
@@ -242,6 +249,9 @@
 
           <!-- Quiz section -->
           <section class="section hidden" id="quiz-screen">
+            <section class="section hidden" id="quiz-screen">
+              <button class="btn-back" onclick="showScreen('tools-screen')">Back</button>
+            <div class="section-header">
             <div class="section-header">
               <h2 class="section-title">Let's test your Cybersecurity Knowledge</h2>
               <p class="section-sub">10 questions, No time limit, Use your Cyber knowledge</p>
