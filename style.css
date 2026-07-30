@@ -164,13 +164,13 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 .screen-out 
 {
   opacity:0 !important;
-    transform: translateY(0);
+    transform: translateY(-10px);
   transition:all 1s cubic-bezier(0.25,0.46,0.45,0.95);
 }
 .screen-in-start 
 {
   opacity:0 !important;
-    transform: translateY(0);
+    transform: translateY(20px);
   transition:all 1s cubic-bezier(0.25,0.46,0.45,0.95);
 }
 .banner-terminal{
@@ -288,6 +288,26 @@ background: rgb(7, 225, 7);
 color:white ;
 transform: translateY(-1px);
 transition: all 0.8s;
+}
+.btn-back
+{
+  position: fixed;
+  top:150px;
+  left:40px;
+  z-index:200;
+  background: #08e008;
+  border:2px solid var(--amber);
+  color: black;
+  padding:0.5rem 1rem;
+  font-family: var(--display);
+  font-size:1.5rem;
+  cursor: pointer;
+  border-radius:4px;
+  transition: all 1s ease;
+}
+.btn-back:hover {
+  background: var(--red);
+  color: #000;
 }
 .btn-sm{
     padding: 0.5rem 1rem;
