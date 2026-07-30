@@ -1,12 +1,12 @@
 
 # Cybersecurity Interactive and learning Website: 
 
-This is a fun website where users can interact with cool tools related to cybersecurity while learning valuable info about the topics with a short quiz at the end to test the users' knowledge. It has some cool tools that users can interact with and play with, as well as 4 basic interactive lessons of Cybersecurity
+This is a step-by-step website where the user will have to go through lessons covering the basic fundamentals of cybersecurity, then they will explore tools and learn some amazing info out of that. After all of that, they will take a short 10-question quiz that will test the user of some easy concepts learned throughout this website and it is all done in a step by step format, so don't skip anything! Come learn some valuable info! 
 
 # Features of this Website:
-
+- Step-by-Step Website foundation 
 - 4 basic lessons on Cybersecurity 
-- Interesting tools such as: Caesar Cipher, password strength checker, Hashing Demo, Firewall Demo,etc.
+- Interesting tools such as: Caesar Cipher, password strength checker, Hashing Demo,etc.
 - A short 10-question quiz that tests on basic stuff learned in this website
 - A polished, and bug free UI (took quite a while to fix bugs and polish things up) 
 
@@ -37,11 +37,15 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - Google Images for the Icons used in the website
   
 # Screenshots:
-<img width="1438" height="687" alt="Screenshot 2026-07-06 at 4 08 41 PM" src="https://github.com/user-attachments/assets/a5b56ff7-a3b3-4156-9c08-b5070c7f7e42" />
-<img width="1438" height="687" alt="Screenshot 2026-07-06 at 4 09 00 PM" src="https://github.com/user-attachments/assets/3002035d-d5a4-410a-98c4-995c70b78e62" />
-<img width="1438" height="687" alt="Screenshot 2026-07-06 at 4 11 25 PM" src="https://github.com/user-attachments/assets/8ee70ede-6c17-487b-b7f2-55acd3ef0654" />
-<img width="1438" height="687" alt="Screenshot 2026-07-06 at 4 10 00 PM" src="https://github.com/user-attachments/assets/5073d619-a58e-40d3-9448-da25f5d23826" />
-<img width="1438" height="687" alt="Screenshot 2026-07-06 at 4 10 40 PM" src="https://github.com/user-attachments/assets/5401e0c9-aae3-4d41-aa0d-44a0d7f88b6d" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 26 52 PM" src="https://github.com/user-attachments/assets/929c5a43-56fa-45c7-94f6-02ea22cd9fdb" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 08 PM" src="https://github.com/user-attachments/assets/0d9a1039-f47f-4422-8a40-71053aa211d6" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 26 PM" src="https://github.com/user-attachments/assets/302b8020-f412-4876-ad91-673fa58a367c" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 47 PM" src="https://github.com/user-attachments/assets/0139b401-e027-4d9a-ba44-9c846e350899" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 28 25 PM" src="https://github.com/user-attachments/assets/0eb79911-df35-4456-a14b-cce0f72c35c6" />
+
+
+
+
 
 
 
