@@ -38,7 +38,6 @@
             </div>
         </div>
         <div class="terminal-wrap"></div>
-         <img src="Assets/green-globe.png" alt="" class="green-globe"/>
          <img src="Assets/green-lock.png" alt="" class="green-lock"/>
         <div class="banner-terminal">
             <div class="terminal-bar">
@@ -61,13 +60,10 @@
 <section class="section hidden" id="lessons-screen">
     <div class="section-header">
         <h2 class="section-title">Learn the Basics</h2>
-        <img src="Assets/learn.png" alt="" class="learn-img"/>
         <h3 class="section-help">Click a lesson to learn more</h3>
     </div>
 
     <div class="lesson-grid">
-
-
       <div class="lesson-card" id="encryption-card">
           <div class="lesson-head" onclick="toggleLesson('encryption-card')">
                 <div>
@@ -78,7 +74,7 @@
             <div class="lesson-body">
             <p>Encryption is the process of converting readable data (plaintext) into an unreadable format (ciphertext) so only authorized people can read it. Think of it like, when you text someone through messages, there is a background process that makes sure that no one else except you and the other person can read the message, not even the app provider company (whatsapp, apple, google, etc.) can read your messages.</p>
                 <div class="lesson-example">
-                    <div class="example-label"> Example: Caesar Cipher</div> 
+                    <div class="example-label">Caesar Cipher encryption demo</div> 
                     <div class="cipher-demo">
                         <div class="cipher-row">
                         <span class="cipher-label">Plain (Type here):</span>
@@ -113,7 +109,7 @@
             <div class="lesson-body">
                 <p>Phishing is when an attacker impersonates trusted organisations to trick you into giving up passwords, credit card info, and personal information</p>
                 <div class="lesson-example">
-                    <div class="example-label">// SPOT THE PHISH - Is this email legit?</div>
+                    <div class="example-label">Phishing Email Demo</div>
                     <div class="phish-demo" id="phishDemo">
                         <div class="fake-email">
                             <div class="email-field"><span>From:</span> <span id="phishFrom"></span></div>
@@ -125,7 +121,7 @@
                             </div>
                             <div class="phish-result" id="phishResult"></div>
                         </div> 
-                        <button class="btn btn-sm btn-ghost"  onclick="nextPhish(event)">NEXT EMAIL →</button> 
+                        <button class="btn btn-sm btn-ghost"  onclick="nextPhish(event)">Next Email </button> 
                     </div>  
                     <div class="lesson-facts">
                         <div class="fact"> 91% of all cyberattacks begin with a phishing email</div>
@@ -163,9 +159,9 @@
                 </div> 
               </div>
               <div class="lesson-body">
-                <p>SQL Injection is when an attacker inserts malicious SQL code into an input field, tricking a database into revealing or deleting data</p>  
+                <p>SQL Injection is when an attacker inserts malicious SQL code into an input field, tricking a database or a website into revealing or deleting sensitive data</p>  
                 <div class="lesson-example">
-                    <div class="example-label">Try these inputs in a fake login: </div>
+                    <div class="example-label">SQL Injection Demo</div>
                     <div class="sql-demo">
                       <div class="fake-login">
                         <input class="sql-input" id="sqlUser" type="text" placeholder="Username" onclick="stopBubble(event)" oninput="checkSQL()" />
@@ -279,18 +275,11 @@
                 <div class="end-score" id="endScore"></div>
                 <div class="end-msg" id="endMsg"></div>
                 <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN...</button>
-                <button class="btn btn-ghost" onclick="showScreen('congrats-screen')">Return Home</button>
+                <button class="btn return-btn" onclick="showScreen('home-screen')">Return Home</button>
               </div>
             </div>
           </section>
 
-          <!-- Congratulating user screen -->
-          <section class="section congrats-screen hidden" id="congrats-screen">
-            <!-- Yours to write. What do you actually want to say to someone who just finished this? -->
-            <h2 class="section-title">Congrats on finishing the course! I hope you enjoyed and got some valuable information from this website.</h2>
-            <button class="btn btn-primary" onclick="showScreen('home-screen')">Actually go home now!</button>
-          </section>
-        
           <!-- Footer -->
           <footer class="footer">
             <div class="footer-inner">

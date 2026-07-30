@@ -1,10 +1,15 @@
-function showScreen(screenId) 
-{
-  document.querySelectorAll("#home-screen, #lessons-screen, #tools-screen, #quiz-screen, #congrats-screen").forEach(screen => screen.classList.add("hidden"));
-  document.getElementById(screenId).classList.remove("hidden");
-  window.scrollTo({top: 0, behavior: "smooth"});
+let activeScreen = "home-screen";
+function showScreen(id){
+  const current = document.getElementById(activeScreen);
+  const next = document.getElementById(id);
+  if (current === next) return;
+  current.classList.add("screen-out");
+  setTimeout(() => {current.classList.add("hidden"); current.classList.remove("screen-out");}, 400);
+  next.classList.remove("hidden");
+  next.classList.add("screen-in-start");
+  requestAnimationFrame(() => next.classList.remove("screen-in-start"));
+  activeScreen = id;
 }
-
 function toggleLesson(card)
 {
   if (typeof card === "string")

@@ -24,21 +24,18 @@ a{
 }
 * { box-sizing: border-box; margin: 0; padding: 0;}
 html{
-scroll-behavior: smooth;
-min-height: 100%;
-background: linear-gradient(28deg, rgba(67, 130, 48, 1) 0%, rgba(0, 0, 0, 1) 69%, rgba(214, 4, 4, 1) 100%);
-overscroll-behavior: none;
-}
-body{
-  min-height: 100vh;
-background: #438230;
-background: linear-gradient(28deg,rgba(67, 130, 48, 1) 0%, rgba(0, 0, 0, 1) 69%, rgba(214, 4, 4, 1) 100%);
+  scroll-behavior: smooth;
+  min-height: 100%;
+  background: #0d1117;
   overflow-x: hidden;
   overscroll-behavior: none;
 }
-::-webkit-scrollbar {width: 8px;}
-::-webkit-scrollbar-track {background:black;}
-::-webkit-scrollbar-thumb {background: var(--green); border-radius: 8px;}
+body 
+{
+  min-height:100vh;
+  overscroll-behavior:none;
+  background: #0d1117;
+}
 
 .navbar {
     position:fixed;
@@ -66,16 +63,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 }
 .logo-bracket{color:var(--text);}
 .logo-accent{color: #ddefd5;}
-.nav-links{display:flex; gap:2rem; list-style:none;}
-.nav-link {
-    font-family: var(--display);
-    font-size: 0.8rem;
-    color: var(--text-dim); 
-    transition: color 0.8s ease;
-}
-.nav-link:hover {
-    color: var(--red);
-}
 /*  Banner (Hero) - I just called it banner instead of hero :) */
 .banner{
     position: relative;
@@ -104,11 +91,11 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     pointer-events: none;
     background: repeating-linear-gradient(to bottom,transparent, transparent 2px,rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
 }
-.banner-content{
+.banner-content {
     position: relative;
     z-index: 1;
     flex: 1;
-    max-width: 560px;
+    max-width: 650px; /* Changed from 2500px */
 }
 .banner-title{
     position: relative;
@@ -116,7 +103,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     font-size: 90px;
     font-weight: 600;
     line-height: 1;
-    color: gray;
+    color: rgba(255, 255, 255, 0.859);
     margin-bottom: 1.5rem;
   }
 .title-accent{
@@ -138,10 +125,13 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     line-height: 1;
     font-family: var(--desc);
   }
-.banner-btns{ 
+.banner-btns 
+{ 
     display: flex; 
-    gap: 1rem; 
+    gap:1rem; 
     flex-wrap: wrap; 
+    justify-content:center;
+    margin-top:2rem;
 }
 .banner-meta{
     margin-top: 1rem;
@@ -165,14 +155,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     position:absolute;
     flex: 0 0 400px;
 }
-.green-globe{
-    position: absolute;
-    right:-10px;
-    bottom: 130px;
-    width: 120px;
-    height: auto;
-    z-index:2;
-}
 .green-lock
 {
     position: absolute;
@@ -187,13 +169,6 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     height: auto;
     pointer-events: none;
 }
-.learn-img{
-    position:absolute;
-    right: 350px;
-    top: 780px;
-    height: auto;
-    width:100px;
-}
 .hero-title-image
 {
     position: absolute;
@@ -205,18 +180,9 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     transform: translateY(-5px);
    transition: ease-in-out all 0.6s;
 }
-.green-globe:hover{
-    transform: translateY(-5px);
-   transition: ease-in-out all 0.6s;
-}
 .green-lock:hover{
     transform: translateY(-5px);
    transition: ease-in-out all 0.6s;
-}
-.learn-img:hover
-{
-    transform: translateY(-5px);
-    transition:ease-in-out 0.8s;
 }
 .terminal-bar{
     display:flex;
@@ -276,14 +242,17 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 .btn-primary:hover{
     background: #22ff00;
 }
-.btn-ghost{
-    background: transparent;
-    color: var(--green);
-    border: 1px solid var(--green);
+.return-btn
+{
+    background: rgb(174, 37, 37);
+    color: black;
+    position: absolute;
+    bottom:100px;
+    right: 80px;
 }
-.btn-ghost:hover{
-border-color: #ef0808;
-color:#ef0808;
+.return-btn:hover{
+background: rgb(7, 225, 7);
+color:white ;
 transition: all 0.8s;
 }
 .btn-sm{
@@ -568,9 +537,9 @@ transition: all 0.8s;
 }
 .pw-bar{ 
     height:100%; 
-    width:0; 
+    width:2px; 
     border-radius:4px; 
-    transition: width 0.5s ease;
+    transition: all 0.5s ease;
 }
 .pw-label{ 
     font-family:var(--display); 
@@ -659,10 +628,9 @@ transition: all 0.8s;
     max-width: 850px;
     margin: 0 auto;
 }
-.quiz-card
-{
-    padding: (5rem, 0rem);
-    background-color: black;
+#quiz-screen{
+    background: #000;
+    min-height: 100vh;
 }
 .quiz-top
 {
@@ -756,15 +724,15 @@ transition: all 0.8s;
     border-width: 3px;
     transition: all 0.5s;
 }
-.quiz-opt:disabled{cursor: default;}
-.quiz-opt.correct
+.quiz-option:disabled{cursor: default;}
+.quiz-option.correct
 {
     background: rgba(0,255,136,0.1);
     border-color: var(--green);
     color: var(--green);
     transform: scale(1.02);
 }
-.quiz-opt.wrong
+.quiz-option.wrong
 {
     background: rgba(255,68,102,0.08);
     border-color: red;
@@ -839,7 +807,7 @@ transition: all 0.8s;
 .footer{
     border-top: 1px solid var(--border);
     padding: 2rem 2.5rem;
-    background: var(--bg2);
+    background: black;
     color: var(--text);
 }
 .footer-inner{
@@ -874,17 +842,6 @@ transition: all 0.8s;
 }
 .footer-links a:hover{color: red;}
 
-.congrats-screen
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap:1.5rem;
-    min-height:70vh;
-}
-
 /* Mobile Compatability */
 @media (max-width: 768px) {
     .banner{
@@ -898,7 +855,6 @@ transition: all 0.8s;
     .banner-title{font-size: 60px;}
     .banner-desc{font-size: 20px;}
     .banner-btns{gap: 0.5em; display: flex; flex-wrap: wrap;}
-    .green-globe{display: none;}
     .green-lock{display: none;}
     .hero-title-image{display: none;}
     .nav-links{
