@@ -35,11 +35,13 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - Prettier (VS Code extension for clean code formatting)
 - cssgradient.io (for the gradients used in website)
 - Google Images for the Icons used in the website
+- cubicbezier.com for animation (I also sourced the exact animation config from my other project)
+- pexels.com for the video background on banner
   
 # Screenshots:
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 26 52 PM" src="https://github.com/user-attachments/assets/929c5a43-56fa-45c7-94f6-02ea22cd9fdb" />
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 08 PM" src="https://github.com/user-attachments/assets/0d9a1039-f47f-4422-8a40-71053aa211d6" />
-<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 26 PM" src="https://github.com/user-attachments/assets/302b8020-f412-4876-ad91-673fa58a367c" />
+<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 43 30 PM" src="https://github.com/user-attachments/assets/a18cf510-8446-455e-96b3-85d04b4c0ac8" />
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 47 PM" src="https://github.com/user-attachments/assets/0139b401-e027-4d9a-ba44-9c846e350899" />
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 28 25 PM" src="https://github.com/user-attachments/assets/0eb79911-df35-4456-a14b-cce0f72c35c6" />
 
