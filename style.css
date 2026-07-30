@@ -95,7 +95,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     position: relative;
     z-index: 1;
     flex: 1;
-    max-width: 650px; /* Changed from 2500px */
+    max-width: 650px; /* Changed from 2500px as there was a typo */
 }
 .banner-title{
     position: relative;
@@ -127,11 +127,13 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
   }
 .banner-btns 
 { 
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     display: flex; 
-    gap:1rem; 
-    flex-wrap: wrap; 
-    justify-content:center;
-    margin-top:2rem;
+    gap: 1rem; 
 }
 .banner-meta{
     margin-top: 1rem;
