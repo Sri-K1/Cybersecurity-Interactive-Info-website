@@ -272,16 +272,25 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 }
 .btn-primary:hover{
     background: #22ff00;
-    transform: var(--transition), translateY(-1px);
+    transform:translateY(-1px);
+    transition: var(--transition);
     border: 2px solid red;
+}
+.btn-ghost
+{
+    background: var(--blue);
+    color: black;
+    border:2px solid var(--green);
+}
+.btn-ghost:hover
+{
+    border:2px solid black;
+    color: #ff0000;
 }
 .return-btn
 {
     background: rgb(174, 37, 37);
     color: black;
-    position: absolute;
-    bottom:100px;
-    right: 80px;
 }
 .return-btn:hover{
 background: rgb(7, 225, 7);
@@ -375,13 +384,13 @@ transition: all 0.8s;
 }
 .lesson-num{
     font-family: var(--display); 
-    font-size:0.8rem; 
+    font-size:1rem; 
     color:var(--green); 
     letter-spacing: 0.3em;
 }
 .lesson-title{
     font-family: var(--display); 
-    font-size: 1rem; 
+    font-size: 1.5rem; 
     transition:ease-in 0.8s; 
     font-weight: 700;
     color:var(--text);
@@ -500,6 +509,48 @@ transition: all 0.8s;
     transition: background 0.15s;
 }
 .chip:hover{background: rgba(0,255,136,0.15);}
+.fake-email
+{
+    background: #cfdbe5;
+    border: 4px solid #feb13f;
+    border-radius: 4px;
+    padding:1rem;
+}
+.email-field
+{
+    font-family:var(--mono);
+    font-size:1rem;
+    color: black;
+    margin-bottom:0.5rem;
+}
+.email-body
+{
+    font-size: 1.2rem;
+    margin:0.8rem 0;
+    padding:0.9rem;
+    background: rgba(204, 200, 200, 0.936);
+    border: 4px solid var(--blue);
+    border-radius: 4px;
+    line-height: 1.5;
+    color: black;
+}
+.phish-btns{
+    display: flex;
+    gap: 1rem;
+    margin-top:0.9rem;
+}
+.phish-result
+{
+    margin-top:0.8rem;
+    font-family:var(--display);
+    font-size:1rem;
+    padding:0.5rem;
+    border-radius: 4px;
+    display: none;
+}
+.phish-result.show{display: block;}
+.phish-result.correct{background: rgb(0, 0, 0);color: var(--green);}
+.phish-result.incorrect{background: rgb(0, 0, 0);color: var(--red);}
 
 .lesson-facts{
     display: flex; 
