@@ -8,6 +8,7 @@ function showScreen(id){
   next.classList.remove("hidden");
   next.classList.add("screen-in-start");
   requestAnimationFrame(() => next.classList.remove("screen-in-start"));
+  window.scrollTo({top: 0, behavior: "smooth"});
   activeScreen = id;
 }
 function toggleLesson(card)
@@ -328,7 +329,6 @@ function selectAnswer(choice)
   if(choice === q.answer)
   {
     quizScore++;
-    document.getElementById("quizScore").textContent = quizScore;
     buttons[choice].classList.add("correct");
     feedback.className = "quiz-feedback correct-fb show";
     feedback.textContent = "Correct! " + q.explanation;
@@ -372,7 +372,6 @@ function finishQuiz() {
 function restartQuiz() {
   quizIndex = 0;
   quizScore = 0;
-  document.getElementById("quizScore").textContent = "0";
   document.getElementById("quizCard").classList.remove("hidden");
   document.getElementById("quizEnd").classList.add("hidden");
   loadQuestion();

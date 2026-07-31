@@ -200,7 +200,6 @@
                 <div class="tool-header">
                   <div>
                     <div class="tool-title">Password Strength Checker</div>
-                    <div class="tool-sub">See how strong your password really is</div>
                   </div>
                 </div>
                 <div class="pw-input-wrap">
@@ -221,8 +220,7 @@
               <div class="tool-card">
                 <div class="tool-header">
                   <div>
-                    <div class="tool-title">Hashing</div>
-                    <div class="tool-sub">One-way fingerprints are basically impossible to reverse</div>
+                    <div class="tool-title">Hashing</div> 
                   </div>
                 </div>
                 <input type="text" class="tool-input" id="hashInput" placeholder="Type anything to hash..." oninput="generateHash()" autocomplete="off" />
@@ -256,10 +254,6 @@
                      <div class="quiz-question-counter" id="quizNum">
                           Question 1 / 10
                        </div>
-                       <div class="quiz-score-counter">
-                          Score:
-                          <span class="accent" id="quizScore">0</span>
-                      </div>
                   </div>
             </div>
                 <div class="quiz-question" id="quizQuestion">Loading...</div>
@@ -271,8 +265,10 @@
                 <div class="end-title">Misson Successful!</div>
                 <div class="end-score" id="endScore"></div>
                 <div class="end-msg" id="endMsg"></div>
-                <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN...</button>
-                <button class="btn return-btn" onclick="showScreen('home-screen')">Return Home</button>
+                <div class="quiz-end-buttons">
+                 <button class="btn btn-primary" onclick="restartQuiz()">TRY AGAIN...</button>
+                  <button class="btn return-btn" onclick="showScreen('home-screen')">Return Home</button>
+                </div>
               </div>
             </div>
           </section>
