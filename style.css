@@ -176,10 +176,10 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 .banner-terminal{
     position:relative;
     z-index:1;
-    flex:0 0 380px;
-    background:#010408;
-    border:1px solid var(--text);
-    border-radius:4px;
+    flex:0 0 400px;
+    background:#1d1e1f;
+    border:3px solid var(--amber);
+    border-radius:14px;
     overflow:hidden;
 }
 .terminal-wrap{
@@ -208,7 +208,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     gap:0.5rem;
     padding:0.6rem 1rem;
     background: #0d1117;
-    border-bottom: 1px solid var(--text);
+    border-bottom:2px solid var(--amber);
 }
 .t-dot{
     width: 12px;
@@ -221,7 +221,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
 .t-title{
     font-family: var(--mono);
     font-size: 0.8rem;
-    color: red;
+    color: var(--red);
     margin-left: 0.5rem;
 }
 .terminal-body{
@@ -234,7 +234,7 @@ background: linear-gradient(0deg, rgba(23, 21, 21, 1) 31%, rgba(5, 110, 0, 1) 10
     color: var(--green);
     line-height: 1.8;
 }
-.t-prompt{color:var(--text); margin-right:0.5rem;}
+.t-prompt{color:var(--amber); margin-right:0.5rem;}
 .t-cursor{animation: blink 1s infinite;}
 .t-out {color: var(--text); padding-left: 1rem;}
 
@@ -962,10 +962,8 @@ background: rgba(94, 94, 94, 0.985);
     .banner-desc{font-size: 20px;}
     .banner-btns{gap: 0.5em; display: flex; flex-wrap: wrap;}
     .hero-title-image{display: none;}
-    .nav-links{
-    display:none;
-    }
-    .section{
+    .section
+    {
         padding: 4rem 1.5rem;
     }
     .tools-grid{

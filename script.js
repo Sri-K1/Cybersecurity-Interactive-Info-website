@@ -31,7 +31,6 @@ const terminalCommands = [
   "checking firewall",
   "encrypting sensitive data",
   "analyzing phishing emails",
-  "running security audits",
   "verifying SQL queries",
 ];
 
