@@ -39,16 +39,11 @@ My main reason for making a website based on cybersecurity is that I have a pass
 - pexels.com for the video background on banner
   
 # Screenshots:
-<img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 26 52 PM" src="https://github.com/user-attachments/assets/929c5a43-56fa-45c7-94f6-02ea22cd9fdb" />
+<img width="1436" height="689" alt="Screenshot 2026-08-02 at 6 24 57 PM" src="https://github.com/user-attachments/assets/223d1828-cf01-40a7-9e36-44e0f2ba4bd0" />
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 27 08 PM" src="https://github.com/user-attachments/assets/0d9a1039-f47f-4422-8a40-71053aa211d6" />
 <img width="1440" height="686" alt="Screenshot 2026-07-29 at 8 43 30 PM" src="https://github.com/user-attachments/assets/a18cf510-8446-455e-96b3-85d04b4c0ac8" />
 <img width="1440" height="686" alt="Screenshot 2026-07-30 at 6 40 40 PM" src="https://github.com/user-attachments/assets/3ba73af6-103e-4b47-b7ec-d944e80fa2b6" />
 <img width="1440" height="686" alt="Screenshot 2026-07-30 at 6 41 33 PM" src="https://github.com/user-attachments/assets/1c1868e4-5f8d-4e0c-b08e-00e6afcbbbcb" />
-
-
-
-
-
 
 
 
